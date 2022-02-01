@@ -1,0 +1,90 @@
+{
+    "title": "Winter CMS form configuration",
+    "description": "Defines a tabs and fields that will be visible in Winter CMS forms.",
+    "$comment": "https://wintercms.com/docs/backend/forms#form-fields",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "definitions": {
+        "fields": {
+            "type": "object",
+            "title": "Fields",
+            "description": "Defines the available fields for this form or tab.",
+            "patternProperties": {
+                "^[^_][^\\s]+$": {
+                    "title": "Model field",
+                    "description": "Represents a field whose value will be saved and read from the corresponding attribute of a model.",
+                    "$comment": "https://wintercms.com/docs/backend/forms#form-field-options",
+                    "$ref": "#/definitions/globalFieldProperties"
+                },
+                "^_[^\\s]+$": {
+                    "title": "Display field",
+                    "description": "Represents a field that is used for display purposes, and won't be saved in the model when the form is saved.",
+                    "$comment": "https://wintercms.com/docs/backend/forms#form-field-options",
+                    "$ref": "#/definitions/globalFieldProperties"
+                }
+            }
+        },
+        "globalFieldProperties": {
+            "type": "object",
+            "title": "Global field properties",
+            "properties": {
+                "label": {
+                    "title": "Field label",
+                    "description": "The label displayed above the form field to the user. If this is not defined, a label will be automatically generated from the field name. Set to `false` to hide the label on the form.",
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "boolean",
+                            "const": false
+                        }
+                    ]
+                },
+                "type": {
+                    "title": "Field type",
+                    "description": "Defines the type of field to render.",
+                    "default": "text",
+                    "type": "string",
+                    "enum": [
+                        "text",
+                        "number",
+                        "password",
+                        "email",
+                        "textarea",
+                        "dropdown",
+                        "radio",
+                        "balloon-selector",
+                        "checkbox",
+                        "checkboxlist",
+                        "switch",
+                        "section",
+                        "partial",
+                        "hint",
+                        "codeeditor",
+                        "colorpicker",
+                        "datatable",
+                        "datepicker",
+                        "fileupload",
+                        "markdown",
+                        "mediafinder",
+                        "nestedform",
+                        "recordfinder",
+                        "relation",
+                        "repeater",
+                        "richeditor",
+                        "taglist"
+                    ]
+                }
+            }
+        }
+    },
+    "properties": {
+        "fields": {
+            "$ref": "#/definitions/fields"
+        }
+    }
+}
