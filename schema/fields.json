@@ -1,36 +1,62 @@
 {
     "title": "Winter CMS form configuration",
-    "description": "Defines a tabs and fields that will be visible in Winter CMS forms.",
+    "description": "Defines a tabs and fields that will be visible in Winter CMS forms",
     "$comment": "https://wintercms.com/docs/backend/forms#form-fields",
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
     "definitions": {
         "fields": {
             "type": "object",
-            "title": "Fields",
-            "description": "Defines the available fields for this form or tab.",
+            "$comment": "https://wintercms.com/docs/backend/forms#form-field-options",
             "patternProperties": {
+                "^[^_][^\\s]+@create$": {
+                    "title": "Model field (create context)",
+                    "description": "Represents a field whose value will be saved and read from the corresponding attribute of a model. This field will only show when creating a record",
+                    "$ref": "#/definitions/fieldProperties"
+                },
+                "^_[^\\s]+@create$": {
+                    "title": "Display field (create context)",
+                    "description": "Represents a field that is used for display purposes, and won't be saved in the model when the form is saved. This field will only show when creating a record",
+                    "$ref": "#/definitions/fieldProperties"
+                },
+                "^[^_][^\\s]+@update$": {
+                    "title": "Model field (update context)",
+                    "description": "Represents a field whose value will be saved and read from the corresponding attribute of a model. This field will only show when updating a record",
+                    "$ref": "#/definitions/fieldProperties"
+                },
+                "^_[^\\s]+@update$": {
+                    "title": "Display field (update context)",
+                    "description": "Represents a field that is used for display purposes, and won't be saved in the model when the form is saved. This field will only show when updating a record",
+                    "$ref": "#/definitions/fieldProperties"
+                },
+                "^[^_][^\\s]+@preview$": {
+                    "title": "Model field (preview context)",
+                    "description": "Represents a field whose value will be saved and read from the corresponding attribute of a model. This field will only show when previewing a record",
+                    "$ref": "#/definitions/fieldProperties"
+                },
+                "^_[^\\s]+@preview$": {
+                    "title": "Display field (preview context)",
+                    "description": "Represents a field that is used for display purposes, and won't be saved in the model when the form is saved. This field will only show when previewing a record",
+                    "$ref": "#/definitions/fieldProperties"
+                },
                 "^[^_][^\\s]+$": {
                     "title": "Model field",
-                    "description": "Represents a field whose value will be saved and read from the corresponding attribute of a model.",
-                    "$comment": "https://wintercms.com/docs/backend/forms#form-field-options",
-                    "$ref": "#/definitions/globalFieldProperties"
+                    "description": "Represents a field whose value will be saved and read from the corresponding attribute of a model",
+                    "$ref": "#/definitions/fieldProperties"
                 },
                 "^_[^\\s]+$": {
                     "title": "Display field",
-                    "description": "Represents a field that is used for display purposes, and won't be saved in the model when the form is saved.",
-                    "$comment": "https://wintercms.com/docs/backend/forms#form-field-options",
-                    "$ref": "#/definitions/globalFieldProperties"
+                    "description": "Represents a field that is used for display purposes, and won't be saved in the model when the form is saved",
+                    "$ref": "#/definitions/fieldProperties"
                 }
             }
         },
-        "globalFieldProperties": {
+        "fieldProperties": {
             "type": "object",
-            "title": "Global field properties",
             "properties": {
                 "label": {
                     "title": "Field label",
-                    "description": "The label displayed above the form field to the user. If this is not defined, a label will be automatically generated from the field name. Set to `false` to hide the label on the form.",
+                    "description": "The label displayed above the form field to the user. If this is not defined, a label will be automatically generated from the field name. Set to `false` to hide the label on the form",
                     "oneOf": [
                         {
                             "type": "string"
@@ -46,45 +72,58 @@
                 },
                 "type": {
                     "title": "Field type",
-                    "description": "Defines the type of field to render.",
+                    "description": "Defines the type of field to render",
                     "default": "text",
-                    "type": "string",
-                    "enum": [
-                        "text",
-                        "number",
-                        "password",
-                        "email",
-                        "textarea",
-                        "dropdown",
-                        "radio",
-                        "balloon-selector",
-                        "checkbox",
-                        "checkboxlist",
-                        "switch",
-                        "section",
-                        "partial",
-                        "hint",
-                        "codeeditor",
-                        "colorpicker",
-                        "datatable",
-                        "datepicker",
-                        "fileupload",
-                        "markdown",
-                        "mediafinder",
-                        "nestedform",
-                        "recordfinder",
-                        "relation",
-                        "repeater",
-                        "richeditor",
-                        "taglist"
+                    "oneOf": [
+                        {
+                            "$ref": "./fields/number.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/text.json#/definitions/value"
+                        }
                     ]
+                }
+            },
+            "anyOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/number.json#/definitions/value"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "./fields/number.json#/definitions/properties"
+                    }
+                }
+            ]
+        },
+        "tabs": {
+            "type": "object",
+            "$comment": "https://wintercms.com/docs/backend/forms#form-tab-options",
+            "required": [
+                "fields"
+            ],
+            "properties": {
+                "fields": {
+                    "title": "Primary tab fields",
+                    "description": "Defines the fields for this form that will be displayed within the primary tabs",
+                    "$ref": "#/definitions/fields"
                 }
             }
         }
     },
     "properties": {
         "fields": {
+            "title": "Outside form fields",
+            "description": "Defines the fields for this form that will be displayed outside any tab navigation",
             "$ref": "#/definitions/fields"
+        },
+        "tabs": {
+            "title": "Primary tabs",
+            "description": "Enables the primary tab navigation on this form",
+            "$ref": "#/definitions/tabs"
         }
     }
 }
