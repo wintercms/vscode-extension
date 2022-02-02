@@ -1,4 +1,5 @@
 {
+	"extends": "airbnb-base",
 	"env": {
 		"browser": false,
 		"commonjs": true,
@@ -14,6 +15,11 @@
 		"sourceType": "module"
 	},
 	"rules": {
+        "class-methods-use-this": ["off"],
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+		"max-len": ["off"],
 		"no-const-assign": "warn",
 		"no-this-before-super": "warn",
 		"no-undef": "warn",
