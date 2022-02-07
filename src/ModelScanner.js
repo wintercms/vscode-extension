@@ -6,11 +6,8 @@ class ModelScanner {
      * Model scanner.
      *
      * Scans for models in a Winter CMS instance and provides autocomplete options for various YAML configurations.
-     *
-     * @param {vscode} vsInst The VSCode instance
      */
-    constructor(vsInst) {
-        this.vsInst = vsInst;
+    constructor() {
         this.models = [];
         this.moduleWatcher = null;
         this.pluginWatcher = null;
@@ -34,13 +31,13 @@ class ModelScanner {
      * found in these directories, these will then be scanned and made available as autocomplete options.
      */
     scan() {
-        if (this.vsInst.workspace.workspaceFolders === undefined) {
+        if (vscode.workspace.workspaceFolders === undefined) {
             this.models = [];
             return;
         }
 
         // Scan current files
-        this.vsInst.workspace.findFiles('modules/*/models/*.php').then(
+        vscode.workspace.findFiles('modules/*/models/*.php').then(
             (results) => {
                 if (results.length > 0) {
                     results.forEach((model) => {
@@ -49,7 +46,7 @@ class ModelScanner {
                 }
             },
         );
-        this.vsInst.workspace.findFiles('plugins/*/*/models/*.php').then(
+        vscode.workspace.findFiles('plugins/*/*/models/*.php').then(
             (results) => {
                 if (results.length > 0) {
                     results.forEach((model) => {
@@ -60,12 +57,12 @@ class ModelScanner {
         );
 
         // Create and activate file watchers
-        this.moduleWatcher = this.vsInst.workspace.createFileSystemWatcher(
-            'modules/*/models/*.php',
-        );
-        this.pluginWatcher = this.vsInst.workspace.createFileSystemWatcher(
-            'plugins/*/*/models/*.php',
-        );
+        // this.moduleWatcher = vscode.workspace.createFileSystemWatcher(
+        //     'modules/*/models/*.php',
+        // );
+        // this.pluginWatcher = vscode.workspace.createFileSystemWatcher(
+        //     'plugins/*/*/models/*.php',
+        // );
         // this.activateWatchers();
     }
 
@@ -75,7 +72,7 @@ class ModelScanner {
      * @param {vscode.Uri} model
      */
     addModel(model) {
-        this.vsInst.workspace.fs.readFile(model).then(
+        vscode.workspace.fs.readFile(model).then(
             (file) => {
                 let tokens;
 

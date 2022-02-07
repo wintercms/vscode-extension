@@ -1,6 +1,8 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
+const FieldsCompletionProvider = require('./src/CompletionProviders/FieldsCompletionProvider');
+const ModelCompletionProvider = require('./src/ModelCompletionProvider');
 const ModelScanner = require('./src/ModelScanner');
 
 // this method is called when your extension is activated
@@ -16,30 +18,15 @@ function activate(context) {
     const modelScanner = new ModelScanner(vscode);
     modelScanner.scan();
 
-    // Register auto-completion for model keys
-    vscode.languages.registerCompletionItemProvider(
-        {
-            scheme: 'file',
-            language: 'yaml',
-        },
-        {
-            provideCompletionItems: (document, position, token) => {
-                const line = document.lineAt(position);
-
-                if (line.isEmptyOrWhitespace || token.isCancellationRequested) {
-                    return [];
-                }
-
-                const text = line.text.trim();
-                if (/^model:/i.test(text)) {
-                    return modelScanner.getModels().map((model) => ({ label: model }));
-                }
-
-                return [];
-            },
-        },
-        ':',
-    );
+    // Register completion providers
+    context.subscriptions.push(vscode.languages.registerCompletionItemProvider(
+        { scheme: 'file', language: 'yaml' },
+        new ModelCompletionProvider(modelScanner),
+    ));
+    context.subscriptions.push(vscode.languages.registerCompletionItemProvider(
+        { scheme: 'file', language: 'yaml' },
+        new FieldsCompletionProvider(),
+    ));
 }
 
 // this method is called when your extension is deactivated

@@ -27,7 +27,8 @@
 		"test": "node ./test/runTest.js"
 	},
     "dependencies": {
-        "php-parser": "^3.0.3"
+        "php-parser": "^3.0.3",
+        "yaml": "^1.10.2"
     },
 	"devDependencies": {
 		"@types/vscode": "^1.63.0",
