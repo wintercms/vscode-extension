@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Right span",
+            "description": "This field will align to the right side of the form",
+            "type": "string",
+            "const": "right"
+        }
+    }
+}

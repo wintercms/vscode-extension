@@ -55,7 +55,7 @@
             "type": "object",
             "properties": {
                 "label": {
-                    "title": "Field label",
+                    "title": "Label",
                     "description": "The label displayed above the form field to the user. If this is not defined, a label will be automatically generated from the field name. Set to `false` to hide the label on the form",
                     "oneOf": [
                         {
@@ -76,12 +76,70 @@
                     "default": "text",
                     "oneOf": [
                         {
-                            "$ref": "./fields/number.json#/definitions/value"
+                            "$ref": "./fields/types/text.json#/definitions/value"
                         },
                         {
-                            "$ref": "./fields/text.json#/definitions/value"
+                            "$ref": "./fields/types/number.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/email.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/password.json#/definitions/value"
                         }
                     ]
+                },
+                "span": {
+                    "title": "Span",
+                    "description": "Sets the alignment of the field in the form. Options: `auto`, `left`, `right`, `full` and `storm`",
+                    "default": "full",
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "$ref": "./fields/span/auto.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/span/left.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/span/right.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/span/full.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/span/auto.json#/definitions/value"
+                        }
+                    ]
+                },
+                "placeholder": {
+                    "title": "Placeholder",
+                    "description": "Defines an informative hint in the field that disappears when a value is entered",
+                    "type": "string"
+                },
+                "comment": {
+                    "title": "Comment (below field)",
+                    "description": "Adds a description underneath the field, useful for hints or context",
+                    "type": "string"
+                },
+                "commentAbove": {
+                    "title": "Comment (above field)",
+                    "description": "Adds a description above the field but beneath the label, useful for hints or context",
+                    "type": "string"
+                },
+                "commentHtml": {
+                    "title": "Allow HTML in comment",
+                    "description": "If true, the comment may contain HTML markup",
+                    "type": "boolean",
+                    "default": false
+                },
+                "default": {
+                    "title": "Default value",
+                    "description": "Defines the default value for this field, which will be used if no value is entered"
+                },
+                "defaultFrom": {
+                    "title": "Default value from another field",
+                    "description": "Defines the default value as the value from another field in the form"
                 }
             },
             "anyOf": [
@@ -89,12 +147,12 @@
                     "if": {
                         "properties": {
                             "type": {
-                                "$ref": "./fields/number.json#/definitions/value"
+                                "$ref": "./fields/types/number.json#/definitions/value"
                             }
                         }
                     },
                     "then": {
-                        "$ref": "./fields/number.json#/definitions/properties"
+                        "$ref": "./fields/types/number.json#/definitions/properties"
                     }
                 }
             ]

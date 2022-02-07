@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Auto span",
+            "description": "This field will automatically align based on other fields in this form",
+            "type": "string",
+            "const": "auto"
+        }
+    }
+}

@@ -3,7 +3,7 @@
     "definitions": {
         "value": {
             "title": "Number field type",
-            "description": "Renders a single line text input that only accepts numbers",
+            "description": "Renders a single line text input that accepts numbers only",
             "type": "string",
             "const": "number"
         },
@@ -16,11 +16,13 @@
                 },
                 "min": {
                     "description": "The minimum number allowed for this field",
-                    "type": "number"
+                    "type": "number",
+                    "default": null
                 },
                 "max": {
                     "description": "The maximum number allowed for this field",
-                    "type": "number"
+                    "type": "number",
+                    "default": null
                 }
             }
         }
