@@ -4,17 +4,17 @@
 <dict>
     <key>foldingStartMarker</key>
     <string>(?x)
-        (&lt;(?i:body|div|dl|fieldset|form|head|li|ol|script|select|style|table|tbody|tfoot|thead|tr|ul)\b.*?&gt;
+        (&lt;(?i:body|div|dl|fieldset|form|head|li|ol|script|select|style|table|tbody|tfoot|thead|tr|ul|article|aside|blockquote|embed|header|footer|section|svg|address|nav)\b.*?&gt;
         |&lt;!--(?!.*--\s*&gt;)
         |^&lt;!--\ \#tminclude\ (?&gt;.*?--&gt;)$
-        |\{%\s+(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)
+        |\{%\s+(apply|autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)
         )</string>
     <key>foldingStopMarker</key>
     <string>(?x)
-        (&lt;/(?i:body|div|dl|fieldset|form|head|li|ol|script|select|style|table|tbody|tfoot|thead|tr|ul)&gt;
+        (&lt;/(?i:body|div|dl|fieldset|form|head|li|ol|script|select|style|table|tbody|tfoot|thead|tr|ul|article|aside|blockquote|embed|header|footer|section|svg|address|nav)&gt;
         |^(?!.*?&lt;!--).*?--\s*&gt;
         |^&lt;!--\ end\ tminclude\ --&gt;$
-        |\{%\s+end(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)
+        |\{%\s+end(apply|autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)
         )</string>
     <key>name</key>
     <string>Winter CMS Twig Template</string>
@@ -1378,7 +1378,7 @@
         <key>twig-keywords</key>
         <dict>
             <key>match</key>
-            <string>(?&lt;=\s)((?:end)?(?:autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)|as|do|else|elseif|extends|flush|from|ignore missing|import|include|only|use|with)(?=\s)</string>
+            <string>(?&lt;=\s)((?:end)?(?:apply|autoescape|block|component|content|default|deprecated|embed|filter|flash|for|framework|if|macro|raw|sandbox|set|spaceless|trans|verbatim)|as|do|else|elseif|extends|flush|from|ignore missing|import|include|only|page|partial|placeholder|put|styles|scripts|snowboard|use|with)(?=\s)</string>
             <key>name</key>
             <string>keyword.control.twig</string>
         </dict>
@@ -1387,7 +1387,7 @@
         <key>twig-functions-warg</key>
         <dict>
             <key>begin</key>
-            <string>(?&lt;=[\s\(\[\{:,])(attribute|block|constant|cycle|date|divisible by|dump|include|max|min|parent|random|range|same as|source|template_from_string)(\()</string>
+            <string>(?&lt;=[\s\(\[\{:,])(attribute|block|component|constant|content|country_timezones|cycle|date|divisible by|dump|html_classes|include|max|min|page|parent|partial|placeholder|random|range|same as|source|template_from_string)(\()</string>
             <key>beginCaptures</key>
             <dict>
                 <key>1</key>
@@ -1689,7 +1689,7 @@
                 </dict>
             </dict>
             <key>match</key>
-            <string>(?&lt;=(?:[a-zA-Z0-9_\x{7f}-\x{ff}\]\)\'\"]\|)|\{%\sfilter\s)(abs|capitalize|e(?:scape)?|first|join|(?:json|url)_encode|keys|last|length|lower|nl2br|number_format|raw|reverse|round|sort|striptags|title|trim|upper)(?=[\s\|\]\}\):,]|\.\.|\*\*)</string>
+            <string>(?&lt;=(?:[a-zA-Z0-9_\x{7f}-\x{ff}\]\)\'\"]\|)|\{%\sfilter\s)(abs|capitalize|e(?:scape)?|first|join|(?:json|url)_encode|keys|last|length|lower|nl2br|number_format|page|raw|reverse|round|sort|striptags|theme|title|trim|upper)(?=[\s\|\]\}\):,]|\.\.|\*\*)</string>
         </dict>
 
         <!-- FILTERS (w/ arguments & user-defined) -->
