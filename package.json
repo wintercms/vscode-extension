@@ -14,6 +14,46 @@
     ],
 	"main": "./extension.js",
 	"contributes": {
+        "languages": [
+            {
+                "id": "wintercms-lang",
+                "aliases": ["Winter CMS Template", "wintercms", "winter"],
+                "filenamePatterns": [
+                    "**/themes/*/**/*.htm"
+                ],
+                "configuration": "./language/wintercms-language-configuration.json",
+                "icon": {
+                    "light": "./language/icons/winter-light.png",
+                    "dark": "./language/icons/winter-dark.png"
+                }
+            },
+            {
+                "id": "wintercms-twig",
+                "aliases": ["Winter CMS Template (Twig)", "winter-twig"],
+                "configuration": "./language/twig-language-configuration.json",
+                "icon": {
+                    "light": "./language/icons/winter-light.png",
+                    "dark": "./language/icons/winter-dark.png"
+                }
+            }
+        ],
+        "grammars": [
+            {
+                "language": "wintercms-lang",
+                "scopeName": "text.html.wintercms",
+                "path": "./syntax/wintercms.tmLanguage.json",
+                "embeddedLanguages": {
+                    "source.ini": "ini",
+                    "source.php": "php",
+                    "text.html.twig.wintercms": "wintercms-twig"
+                }
+            },
+            {
+                "language": "wintercms-twig",
+                "scopeName": "text.html.twig.wintercms",
+                "path": "./syntax/twig.wintercms.tmLanguage"
+            }
+        ],
 		"yamlValidation": [
 			{
 			  "fileMatch": "fields.yaml",

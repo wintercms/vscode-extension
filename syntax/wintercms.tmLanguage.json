@@ -1,0 +1,74 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Winter CMS Template",
+    "scopeName": "text.html.wintercms",
+    "patterns": [
+        {
+            "contentName": "source.ini.wintercms",
+            "begin": "^\\A",
+            "beginCaptures": {
+                "2": {
+                    "name": "keyword.other.definition.ini"
+                },
+                "3": {
+                    "name": "comment.line.semicolon.ini"
+                },
+                "4": {
+                    "name": "punctuation.definition.entity.ini"
+                }
+            },
+            "end": "===?\\s*$",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.winter.section.delimiter"
+                }
+            },
+            "patterns": [
+                {
+                    "patterns": [
+                        {
+                            "include": "source.ini"
+                        }
+                    ],
+                    "name": "meta.embedded.ini"
+                }
+            ]
+        },
+        {
+            "contentName": "text.html.php",
+            "begin": "^\\s*(<\\?(php|=)?)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.section.embedded.begin.php"
+                }
+            },
+            "end": "((\\?>)|(^\\s*===?\\s*$))",
+            "endCaptures": {
+                "2": {
+                    "name": "punctuation.section.embedded.end.php"
+                },
+                "3": {
+                    "name": "punctuation.winter.section.delimiter"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.php"
+                }
+            ]
+        },
+        {
+            "contentName": "text.html.twig.wintercms",
+            "patterns": [
+                {
+                    "patterns": [
+                        {
+                            "include": "text.html.twig.wintercms"
+                        }
+                    ],
+                    "name": "meta.embedded.twig"
+                }
+            ]
+        }
+    ]
+}
