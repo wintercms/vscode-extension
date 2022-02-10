@@ -1387,7 +1387,7 @@
         <key>twig-functions-warg</key>
         <dict>
             <key>begin</key>
-            <string>(?&lt;=[\s\(\[\{:,])(attribute|block|component|constant|content|country_timezones|cycle|date|divisible by|dump|html_classes|include|max|min|page|parent|partial|placeholder|random|range|same as|source|template_from_string)(\()</string>
+            <string>(?&lt;=[\s\(\[\{:,])(app|asset|attribute|block|component|constant|content|country_timezones|cycle|date|divisible by|dump|html_classes|imageWidth|imageHeight|include|max|media|min|page|parent|partial|placeholder|random|range|resize|same as|source|template_from_string)(\()</string>
             <key>beginCaptures</key>
             <dict>
                 <key>1</key>
@@ -1594,7 +1594,7 @@
         <key>twig-filters-warg</key>
         <dict>
             <key>begin</key>
-            <string>(?&lt;=(?:[a-zA-Z0-9_\x{7f}-\x{ff}\]\)\'\"]\|)|\{%\sfilter\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|format|join|merge|number_format|replace|round|slice|split|trim)(\()</string>
+            <string>(?&lt;=(?:[a-zA-Z0-9_\x{7f}-\x{ff}\]\)\'\"]\|)|\{%\sfilter\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|format|join|merge|number_format|replace|resize|round|slice|split|trim)(\()</string>
             <key>beginCaptures</key>
             <dict>
                 <key>1</key>
@@ -1689,7 +1689,7 @@
                 </dict>
             </dict>
             <key>match</key>
-            <string>(?&lt;=(?:[a-zA-Z0-9_\x{7f}-\x{ff}\]\)\'\"]\|)|\{%\sfilter\s)(abs|capitalize|e(?:scape)?|first|join|(?:json|url)_encode|keys|last|length|lower|nl2br|number_format|page|raw|reverse|round|sort|striptags|theme|title|trim|upper)(?=[\s\|\]\}\):,]|\.\.|\*\*)</string>
+            <string>(?&lt;=(?:[a-zA-Z0-9_\x{7f}-\x{ff}\]\)\'\"]\|)|\{%\sfilter\s)(abs|app|asset|capitalize|e(?:scape)?|first|imageWidth|imageHeight|join|(?:json|url)_encode|keys|last|length|lower|media|nl2br|number_format|page|raw|reverse|round|sort|striptags|theme|title|trim|upper)(?=[\s\|\]\}\):,]|\.\.|\*\*)</string>
         </dict>
 
         <!-- FILTERS (w/ arguments & user-defined) -->
