@@ -1,8 +1,24 @@
 {
 	"name": "winter-cms",
 	"displayName": "Winter CMS",
-	"description": "Official Winter CMS VSCode extension",
-	"version": "0.0.1",
+	"description": "Official Winter CMS extension, providing syntax highlighting and code completion for Winter projects.",
+    "keywords": ["winter", "wintercms", "cms", "laravel", "framework"],
+    "preview": true,
+	"version": "0.1.0",
+    "icon": "./assets/logo.png",
+    "galleryBanner": {
+        "color": "#103141",
+        "theme": "dark"
+    },
+    "license": "MIT",
+    "homepage": "https://wintercms.com/",
+    "bugs": {
+        "url": "https://github.com/wintercms/vscode-extension/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wintercms/vscode-extension.git"
+    },
 	"engines": {
 		"vscode": "^1.63.0"
 	},
@@ -16,7 +32,7 @@
 	"contributes": {
         "languages": [
             {
-                "id": "wintercms-lang",
+                "id": "wintercms",
                 "aliases": ["Winter CMS Template", "wintercms", "winter"],
                 "filenamePatterns": [
                     "**/themes/*/**/*.htm"
@@ -39,7 +55,7 @@
         ],
         "grammars": [
             {
-                "language": "wintercms-lang",
+                "language": "wintercms",
                 "scopeName": "text.html.wintercms",
                 "path": "./syntax/wintercms.tmLanguage.json",
                 "embeddedLanguages": {

@@ -1,65 +1,38 @@
-# winter-cms README
+# Winter VSCode Extension
 
-This is the README for your extension "winter-cms". After writing up a brief description, we recommend including the following sections.
+![Banner](./assets/banner.png)
+
+The official Visual Studio Code extension for Winter CMS, providing syntax highlighting, code completion and useful assistive features for developers working on Winter projects.
+
+This extension is currently in preview and is not feature-complete.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+**Currently available**
 
-For example if there is an image subfolder under your extension project workspace:
+- Syntax highlighting for CMS template files.
+- Twig definition for Winter-provided Twig functions and filters.
 
-\!\[feature X\]\(images/feature-x.png\)
+**Planned for v1.0.0**
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- YAML schema validation and code completion for the following configurations:
+    - Form field definitions (`fields.yaml`)
+    - List column definitions (`columns.yaml`)
+    - Form behaviour configuration (`config_form.yaml`)
+    - List behaviour configuration (`config_list.yaml`)
+    - Relation behaviour configuration (`config_releation.yaml`)
+    - Reorder behaviour configuration (`config_reorder.yaml`)
+    - Import/export behaviour configuration (`config_import_export.yaml`)
+- Code completion for CMS templates:
+    - Main template definitions in INI section
+    - Component configuration in INI section
+    - Component variables in `{% component $}` tag
+
+## Screenshot
+
+![Screenshot](./assets/screenshot.png)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+The YAML validation will require the [YAML plugin](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) provided by Red Hat. This will be installed automatically with this extension.
 
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**

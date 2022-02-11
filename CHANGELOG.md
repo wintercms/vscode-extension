@@ -1,9 +1,7 @@
-# Change Log
+# Changelog
 
-All notable changes to the "winter-cms" extension will be documented in this file.
+## v0.1.0 - 11th February, 2022
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- Initial release of extension.
+- Added syntax highlight of CMS templates.
+- Added Twig filters and functions provided by Winter.
