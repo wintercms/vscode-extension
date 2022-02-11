@@ -1,6 +1,6 @@
 # Winter VSCode Extension
 
-![Banner](./assets/banner.png)
+![Banner](https://github.com/wintercms/vscode-extension/raw/main/assets/banner.png?raw=true)
 
 The official Visual Studio Code extension for Winter CMS, providing syntax highlighting, code completion and useful assistive features for developers working on Winter projects.
 
@@ -26,11 +26,11 @@ This extension is currently in preview and is not feature-complete.
 - Code completion for CMS templates:
     - Main template definitions in INI section
     - Component configuration in INI section
-    - Component variables in `{% component $}` tag
+    - Component variables in `{% component %}` tag
 
 ## Screenshot
 
-![Screenshot](./assets/screenshot.png)
+![Screenshot](https://github.com/wintercms/vscode-extension/raw/main/assets/screenshot.png?raw=true)
 
 ## Requirements
 

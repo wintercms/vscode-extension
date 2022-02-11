@@ -1,24 +1,31 @@
 {
 	"name": "winter-cms",
 	"displayName": "Winter CMS",
+    "publisher": "wintercms",
 	"description": "Official Winter CMS extension, providing syntax highlighting and code completion for Winter projects.",
-    "keywords": ["winter", "wintercms", "cms", "laravel", "framework"],
-    "preview": true,
+	"keywords": [
+		"winter",
+		"wintercms",
+		"cms",
+		"laravel",
+		"framework"
+	],
+	"preview": true,
 	"version": "0.1.0",
-    "icon": "./assets/logo.png",
-    "galleryBanner": {
-        "color": "#103141",
-        "theme": "dark"
-    },
-    "license": "MIT",
-    "homepage": "https://wintercms.com/",
-    "bugs": {
-        "url": "https://github.com/wintercms/vscode-extension/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/wintercms/vscode-extension.git"
-    },
+	"icon": "assets/logo.png",
+	"galleryBanner": {
+		"color": "#103141",
+		"theme": "dark"
+	},
+	"license": "MIT",
+	"homepage": "https://wintercms.com/",
+	"bugs": {
+		"url": "https://github.com/wintercms/vscode-extension/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wintercms/vscode-extension.git"
+	},
 	"engines": {
 		"vscode": "^1.63.0"
 	},
@@ -26,78 +33,90 @@
 		"Programming Languages"
 	],
 	"activationEvents": [
-        "onLanguage:yaml"
-    ],
-	"main": "./extension.js",
+		"onLanguage:yaml"
+	],
+	"main": "./out/main.js",
 	"contributes": {
-        "languages": [
-            {
-                "id": "wintercms",
-                "aliases": ["Winter CMS Template", "wintercms", "winter"],
-                "filenamePatterns": [
-                    "**/themes/*/**/*.htm"
-                ],
-                "configuration": "./language/wintercms-language-configuration.json",
-                "icon": {
-                    "light": "./language/icons/winter-light.png",
-                    "dark": "./language/icons/winter-dark.png"
-                }
-            },
-            {
-                "id": "wintercms-twig",
-                "aliases": ["Winter CMS Template (Twig)", "winter-twig"],
-                "configuration": "./language/twig-language-configuration.json",
-                "icon": {
-                    "light": "./language/icons/winter-light.png",
-                    "dark": "./language/icons/winter-dark.png"
-                }
-            }
-        ],
-        "grammars": [
-            {
-                "language": "wintercms",
-                "scopeName": "text.html.wintercms",
-                "path": "./syntax/wintercms.tmLanguage.json",
-                "embeddedLanguages": {
-                    "source.ini": "ini",
-                    "source.php": "php",
-                    "text.html.twig.wintercms": "wintercms-twig"
-                }
-            },
-            {
-                "language": "wintercms-twig",
-                "scopeName": "text.html.twig.wintercms",
-                "path": "./syntax/twig.wintercms.tmLanguage"
-            }
-        ],
+		"languages": [
+			{
+				"id": "wintercms",
+				"aliases": [
+					"Winter CMS Template",
+					"wintercms",
+					"winter"
+				],
+				"filenamePatterns": [
+					"**/themes/*/**/*.htm"
+				],
+				"configuration": "./language/wintercms-language-configuration.json",
+				"icon": {
+					"light": "./language/icons/winter-light.png",
+					"dark": "./language/icons/winter-dark.png"
+				}
+			},
+			{
+				"id": "wintercms-twig",
+				"aliases": [
+					"Winter CMS Template (Twig)",
+					"winter-twig"
+				],
+				"configuration": "./language/twig-language-configuration.json",
+				"icon": {
+					"light": "./language/icons/winter-light.png",
+					"dark": "./language/icons/winter-dark.png"
+				}
+			}
+		],
+		"grammars": [
+			{
+				"language": "wintercms",
+				"scopeName": "text.html.wintercms",
+				"path": "./syntax/wintercms.tmLanguage.json",
+				"embeddedLanguages": {
+					"source.ini": "ini",
+					"source.php": "php",
+					"text.html.twig.wintercms": "wintercms-twig"
+				}
+			},
+			{
+				"language": "wintercms-twig",
+				"scopeName": "text.html.twig.wintercms",
+				"path": "./syntax/twig.wintercms.tmLanguage"
+			}
+		],
 		"yamlValidation": [
 			{
-			  "fileMatch": "fields.yaml",
-			  "url": "./schema/fields.json"
+				"fileMatch": "fields.yaml",
+				"url": "./schema/fields.json"
 			}
-		  ]
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "npm run lint",
-		"test": "node ./test/runTest.js"
+		"test": "node ./test/runTest.js",
+        "vscode:prepublish": "npm run esbuild-base -- --minify",
+        "esbuild-base": "rimraf out && esbuild ./extension.js --bundle --outfile=out/main.js --external:vscode --platform=node",
+        "esbuild": "npm run esbuild-base -- --sourcemap",
+        "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch"
 	},
-    "dependencies": {
-        "php-parser": "^3.0.3",
-        "yaml": "^1.10.2"
-    },
+	"dependencies": {
+		"php-parser": "^3.0.3",
+		"yaml": "^1.10.2"
+	},
 	"devDependencies": {
-		"@types/vscode": "^1.63.0",
 		"@types/glob": "^7.2.0",
 		"@types/mocha": "^9.0.0",
 		"@types/node": "14.x",
+		"@types/vscode": "^1.63.0",
+		"@vscode/test-electron": "^2.0.3",
+		"esbuild": "^0.14.21",
 		"eslint": "^8.6.0",
-		"eslint-plugin-import": "^2.25.4",
 		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.25.4",
 		"glob": "^7.2.0",
 		"mocha": "^9.1.3",
-		"typescript": "^4.5.4",
-		"@vscode/test-electron": "^2.0.3"
+		"typescript": "^4.5.4"
 	},
 	"extensionDependencies": [
 		"redhat.vscode-yaml"
