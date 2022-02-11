@@ -1,0 +1,41 @@
+{
+    "title": "Winter CMS Form Behaviour configuration",
+    "description": "Configures a controller that implements the form behaviour",
+    "$comment": "https://wintercms.com/docs/backend/forms",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "title": "Name",
+            "description": "The name of the object or model that is being managed by the form. This is used for titles on all pages within the form behaviour, if they are not explicitly overridden. The name should generally be the singular term for the object or model being manipulated.",
+            "type": "string"
+        },
+        "form": {
+            "title": "Form configuration",
+            "description": "This must be either a form configuration array that defines the available fields, or the path to a field definition file.",
+            "$comment": "https://wintercms.com/docs/backend/forms#form-field-options",
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "$ref": "./fields.json"
+                }
+            ]
+        },
+        "modelClass": {
+            "title": "Model class",
+            "description": "Defines the model that will be loaded and saved by this form.",
+            "type": "string"
+        },
+        "defaultRedirect": {
+            "title": "Default redirect URL",
+            "description": "This is used as a fallback redirection URL when no specific redirect page is defined by an action taken in this form."
+        }
+    },
+    "required": [
+        "name",
+        "form",
+        "modelClass"
+    ]
+}
