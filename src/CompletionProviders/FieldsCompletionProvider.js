@@ -38,6 +38,21 @@ class FieldsCompletionProvider {
         // Parse YAML document up to this point
         const parser = new FieldsParser(document, position);
 
+        switch (foundKeyword) {
+            case 'dependsOn':
+                return this.processDependsOn(parser, document, position);
+            default:
+                break;
+        }
+
+        return [];
+    }
+
+    processDependsOn(parser, document, position) {
+        if (!parser.isNestedWithin('fields', '*', 'dependsOn')) {
+            return [];
+        }
+
         return [];
     }
 }

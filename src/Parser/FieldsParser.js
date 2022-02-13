@@ -8,14 +8,33 @@ class FieldsParser {
             new vscode.Position(0, 0),
             position,
         )));
+
         this.currentHierarchy = this.getCurrentHierarchy();
         this.currentValue = this.getCurrentValue();
-
-        console.log(this.currentHierarchy);
     }
 
     isNestedWithin(...hierarchy) {
+        const startIndex = this.scurrentHierarchy.indexOf(hierarchy[0]);
 
+        if (startIndex === -1) {
+            return false;
+        }
+
+        const currentHierarchy = this.getCurrentHierarchy().slice(startIndex, hierarchy.length);
+        const dropIndexes = [];
+
+        for (let i = 0; i < hierarchy.length; i += 1) {
+            if (hierarchy[i] === '*') {
+                dropIndexes.push(i);
+            }
+        }
+
+        dropIndexes.forEach((index) => {
+            currentHierarchy.splice(index, 1);
+            hierarchy.splice(index, 1);
+        });
+
+        return JSON.stringify(currentHierarchy) === JSON.stringify(hierarchy);
     }
 
     getCurrentHierarchy() {
