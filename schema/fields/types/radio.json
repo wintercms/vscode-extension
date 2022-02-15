@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Radio field type",
+            "description": "Renders a list of radio options, where only one item can be selected at a time",
+            "type": "string",
+            "const": "radio"
+        }
+    }
+}
