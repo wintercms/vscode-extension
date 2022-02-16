@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Repeater field type",
+            "description": "Renders a repeating set of form fields defined within",
+            "type": "string",
+            "const": "repeater"
+        }
+    }
+}

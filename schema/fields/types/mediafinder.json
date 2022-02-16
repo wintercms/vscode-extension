@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Mediafinder field type",
+            "description": "Renders a field for selecting an item from the media manager library",
+            "type": "string",
+            "const": "mediafinder"
+        }
+    }
+}

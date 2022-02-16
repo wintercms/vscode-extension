@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Datepicker field type",
+            "description": "Renders a text field used for selecting date and times",
+            "type": "string",
+            "const": "datepicker"
+        }
+    }
+}

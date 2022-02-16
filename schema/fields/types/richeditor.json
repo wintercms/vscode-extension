@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Richeditor field type",
+            "description": "Renders a visual editor for rich formatted text, also known as a WYSIWYG editor",
+            "type": "string",
+            "const": "richeditor"
+        }
+    }
+}

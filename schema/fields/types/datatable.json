@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Datatable field type",
+            "description": "Renders an editable table of records, formatted as a grid",
+            "type": "string",
+            "const": "datatable"
+        }
+    }
+}

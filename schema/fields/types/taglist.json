@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Taglist field type",
+            "description": "Renders a field for inputting a list of tags",
+            "type": "string",
+            "const": "taglist"
+        }
+    }
+}

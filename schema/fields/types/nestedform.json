@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Nestedform field type",
+            "description": "Renders a nested form as the contents of this field, returns data as an array of the fields contained",
+            "type": "string",
+            "const": "nestedform"
+        }
+    }
+}

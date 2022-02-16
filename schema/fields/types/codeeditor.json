@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Codeeditor field type",
+            "description": "Renders a plaintext editor for formatted code or markup",
+            "type": "string",
+            "const": "codeeditor"
+        }
+    }
+}

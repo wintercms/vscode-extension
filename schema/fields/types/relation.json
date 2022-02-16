@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Relation field type",
+            "description": "Renders either a dropdown or checkbox list according to the field relation type",
+            "type": "string",
+            "const": "relation"
+        }
+    }
+}
