@@ -4,38 +4,51 @@
     "scopeName": "text.html.wintercms",
     "patterns": [
         {
-            "contentName": "source.ini.wintercms",
-            "begin": "^\\A",
+            "name": "source.ini.wintercms",
+            "begin": "^(((\\[)(.*?)(\\]))|(\\s*\\b([a-zA-Z0-9_.-]+)\\b\\s*(=))|((\\s*#)(.*$\\n))|((\\s*;)(.*$\\n)))",
             "beginCaptures": {
-                "2": {
-                    "name": "keyword.other.definition.ini"
-                },
                 "3": {
-                    "name": "comment.line.semicolon.ini"
+                    "name": "punctuation.definition.entity.ini"
                 },
                 "4": {
+                    "name": "entity.name.section.group-title.ini"
+                },
+                "5": {
                     "name": "punctuation.definition.entity.ini"
+                },
+                "7": {
+                    "name": "keyword.other.definition.ini"
+                },
+                "8": {
+                    "name": "punctuation.separator.key-value.ini"
+                },
+                "10": {
+                    "name": "punctuation.definition.comment.ini"
+                },
+                "11": {
+                    "name": "comment.line.number-sign.ini"
+                },
+                "13": {
+                    "name": "punctuation.definition.comment.ini"
+                },
+                "14": {
+                    "name": "comment.line.semicolon.ini"
                 }
             },
-            "end": "===?\\s*$",
-            "endCaptures": {
+            "while": "^(?!===?)",
+            "whileCaptures": {
                 "0": {
                     "name": "punctuation.winter.section.delimiter"
                 }
             },
             "patterns": [
                 {
-                    "patterns": [
-                        {
-                            "include": "source.ini"
-                        }
-                    ],
-                    "name": "meta.embedded.ini"
+                    "include": "source.ini"
                 }
             ]
         },
         {
-            "contentName": "text.html.php",
+            "contentName": "source.php.wintercms",
             "begin": "^\\s*(<\\?(php|=)?)",
             "beginCaptures": {
                 "1": {
@@ -58,15 +71,10 @@
             ]
         },
         {
-            "contentName": "text.html.twig.wintercms",
+            "contentName": "text.html.wintercms",
             "patterns": [
                 {
-                    "patterns": [
-                        {
-                            "include": "text.html.twig.wintercms"
-                        }
-                    ],
-                    "name": "meta.embedded.twig"
+                    "include": "text.html.twig.wintercms"
                 }
             ]
         }

@@ -73,8 +73,9 @@
 				"scopeName": "text.html.wintercms",
 				"path": "./syntax/wintercms.tmLanguage.json",
 				"embeddedLanguages": {
-					"source.ini": "ini",
-					"source.php": "php",
+					"source.ini.wintercms": "ini",
+					"source.php.wintercms": "php",
+                    "text.html.wintercms": "wintercms-twig",
 					"text.html.twig.wintercms": "wintercms-twig"
 				}
 			},
