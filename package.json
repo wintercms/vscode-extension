@@ -1,7 +1,7 @@
 {
 	"name": "winter-cms",
 	"displayName": "Winter CMS",
-    "publisher": "wintercms",
+	"publisher": "wintercms",
 	"description": "Official Winter CMS extension, providing syntax highlighting and code completion for Winter projects.",
 	"keywords": [
 		"winter",
@@ -11,7 +11,7 @@
 		"framework"
 	],
 	"preview": true,
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"icon": "assets/logo.png",
 	"galleryBanner": {
 		"color": "#103141",
@@ -73,8 +73,9 @@
 				"scopeName": "text.html.wintercms",
 				"path": "./syntax/wintercms.tmLanguage.json",
 				"embeddedLanguages": {
-					"source.ini": "ini",
-					"source.php": "php",
+					"source.ini.wintercms": "ini",
+					"source.php.wintercms": "php",
+					"text.html.wintercms": "wintercms-twig",
 					"text.html.twig.wintercms": "wintercms-twig"
 				}
 			},
@@ -95,10 +96,10 @@
 		"lint": "eslint .",
 		"pretest": "npm run lint",
 		"test": "node ./test/runTest.js",
-        "vscode:prepublish": "npm run esbuild-base -- --minify",
-        "esbuild-base": "rimraf out && esbuild ./extension.js --bundle --outfile=out/main.js --external:vscode --platform=node",
-        "esbuild": "npm run esbuild-base -- --sourcemap",
-        "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch"
+		"vscode:prepublish": "npm run esbuild-base -- --minify",
+		"esbuild-base": "rimraf out && esbuild ./extension.js --bundle --outfile=out/main.js --external:vscode --platform=node",
+		"esbuild": "npm run esbuild-base -- --sourcemap",
+		"esbuild-watch": "npm run esbuild-base -- --sourcemap --watch"
 	},
 	"dependencies": {
 		"php-parser": "^3.0.3",
