@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Sensitive field type",
+            "description": "Renders a revealable password field that can be used for sensitive information such as API keys or secrets, configuration values, etc",
+            "type": "string",
+            "const": "sensitive"
+        }
+    }
+}

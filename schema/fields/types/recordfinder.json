@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Recordfinder field type",
+            "description": "Renders a field with details of a related record",
+            "type": "string",
+            "const": "recordfinder"
+        }
+    }
+}

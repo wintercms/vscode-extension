@@ -116,6 +116,48 @@
                         },
                         {
                             "$ref": "./fields/types/hint.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/codeeditor.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/colorpicker.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/datatable.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/datepicker.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/fileupload.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/markdown.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/mediafinder.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/nestedform.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/recordfinder.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/relation.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/repeater.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/richeditor.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/sensitive.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/taglist.json#/definitions/value"
                         }
                     ]
                 },
