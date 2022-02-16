@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Markdown field type",
+            "description": "Renders a basic editor for markdown formatted text",
+            "type": "string",
+            "const": "markdown"
+        }
+    }
+}
