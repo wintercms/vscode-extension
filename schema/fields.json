@@ -86,6 +86,36 @@
                         },
                         {
                             "$ref": "./fields/types/password.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/textarea.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/dropdown.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/radio.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/balloon-selector.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/checkbox.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/checkboxlist.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/switch.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/section.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/partial.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/types/hint.json#/definitions/value"
                         }
                     ]
                 },

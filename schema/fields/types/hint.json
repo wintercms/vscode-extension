@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Hint field type",
+            "description": "identical to a partial field but renders inside a hint container that can be hidden by the user",
+            "type": "string",
+            "const": "hint"
+        }
+    }
+}
