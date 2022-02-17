@@ -11,7 +11,7 @@
                     "name": "punctuation.definition.entity.ini"
                 },
                 "4": {
-                    "name": "entity.name.section.group-title.ini"
+                    "name": "entity.name.type.class.ini"
                 },
                 "5": {
                     "name": "punctuation.definition.entity.ini"
@@ -42,6 +42,47 @@
                 }
             },
             "patterns": [
+                {
+                    "name": "meta.array.literal.ini",
+                    "begin": "\\b([a-zA-Z0-9_.-]+)\\b(\\[)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.other.definition.ini"
+                        },
+                        "2": {
+                            "name": "meta.brace.square.ini"
+                        }
+                    },
+                    "end": "(\\])\\s",
+                    "endCaptures": {
+                        "1": {
+                            "name": "meta.brace.square.ini"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "source.ini"
+                        }
+                    ]
+                },
+                {
+                    "match": "^(\\[)(.*?)(\\s+(@?)(.*?))?(\\])",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.entity.ini"
+                        },
+                        "4": {
+                            "name": "keyword.other.optional-component.ini"
+                        },
+                        "5": {
+                            "name": "entity.other.attribute-name.component-alias.ini"
+                        },
+                        "6": {
+                            "name": "punctuation.definition.entity.ini"
+                        }
+                    },
+                    "name": "entity.name.type.class.ini"
+                },
                 {
                     "include": "source.ini"
                 }
