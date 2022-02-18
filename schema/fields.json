@@ -180,7 +180,7 @@
                             "$ref": "./fields/span/full.json#/definitions/value"
                         },
                         {
-                            "$ref": "./fields/span/auto.json#/definitions/value"
+                            "$ref": "./fields/span/storm.json#/definitions/value"
                         }
                     ]
                 },
