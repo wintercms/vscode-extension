@@ -2,7 +2,7 @@ const vscode = require('vscode');
 const FieldsParser = require('../Parser/FieldsParser');
 
 class FieldsCompletionProvider {
-    provideCompletionItems(document, position, token, context) {
+    provideCompletionItems(document, position, token) {
         const line = document.lineAt(position);
 
         if (line.isEmptyOrWhitespace || token.isCancellationRequested) {

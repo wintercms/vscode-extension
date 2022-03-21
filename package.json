@@ -93,7 +93,7 @@
         ]
     },
     "scripts": {
-        "lint": "eslint .",
+        "lint": "eslint src/",
         "pretest": "npm run lint",
         "test": "node ./test/runTest.js",
         "vscode:prepublish": "npm run esbuild-base -- --minify",

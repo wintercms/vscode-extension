@@ -9,6 +9,6 @@ class FormBehaviorCompletionProvider {
     constructor(modelScanner) {
         this.modelScanner = modelScanner;
     }
-
-
 }
+
+module.exports = FormBehaviorCompletionProvider;
