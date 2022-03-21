@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Exact",
+            "description": "The value will not be converted and will be copied over exactly",
+            "type": "string",
+            "const": "exact"
+        }
+    }
+}

@@ -2,18 +2,6 @@ const vscode = require('vscode');
 const FieldsParser = require('../Parser/FieldsParser');
 
 class FieldsCompletionProvider {
-    /**
-     * Model completion provider.
-     *
-     * Provides auto-completion options for YAML files that use a "model" key.
-     */
-    constructor() {
-        this.keywords = {
-            defaultFrom: this.processDefaultFrom,
-            dependsOn: this.processDependsOn,
-        };
-    }
-
     provideCompletionItems(document, position, token, context) {
         const line = document.lineAt(position);
 
@@ -27,6 +15,15 @@ class FieldsCompletionProvider {
         // Handle "dependsOn" completion
         if (parser.isNestedWithin('fields', '*', 'dependsOn')) {
             return this.processDependsOn(parser, document, position);
+        }
+        if (parser.isNestedWithin('fields', '*', 'defaultFrom')) {
+            return this.processDefaultFrom(parser, document, position);
+        }
+        if (parser.isNestedWithin('fields', '*', 'trigger', 'field')) {
+            return this.processTriggerField(parser, document, position);
+        }
+        if (parser.isNestedWithin('fields', '*', 'preset', 'field')) {
+            return this.processTriggerField(parser, document, position);
         }
 
         return [];
@@ -67,6 +64,56 @@ class FieldsCompletionProvider {
             // Multi-line array
             startPos = new vscode.Position(position.line, /^( *- )/i.exec(text)[1].length);
             endPos = position;
+        } else {
+            return [];
+        }
+
+        return fields.map((field) => ({
+            label: field,
+            insertText: field,
+            range: new vscode.Range(startPos, endPos),
+        }));
+    }
+
+    processDefaultFrom(parser, document, position) {
+        const fields = parser.getFieldNames();
+        const line = document.lineAt(position);
+        const { text } = line;
+
+        // Find correct starting point, as dependsOn can be a string or an array
+        let startPos;
+        let endPos;
+
+        if (/^ *defaultFrom: */i.test(text)) {
+            // String
+            startPos = new vscode.Position(position.line, /^( *defaultFrom: *)/i.exec(text)[1].length);
+            endPos = position;
+        } else {
+            return [];
+        }
+
+        return fields.map((field) => ({
+            label: field,
+            insertText: field,
+            range: new vscode.Range(startPos, endPos),
+        }));
+    }
+
+    processTriggerField(parser, document, position) {
+        const fields = parser.getFieldNames();
+        const line = document.lineAt(position);
+        const { text } = line;
+
+        // Find correct starting point, as dependsOn can be a string or an array
+        let startPos;
+        let endPos;
+
+        if (/^ *field: */i.test(text)) {
+            // String
+            startPos = new vscode.Position(position.line, /^( *field: *)/i.exec(text)[1].length);
+            endPos = position;
+        } else {
+            return [];
         }
 
         return fields.map((field) => ({

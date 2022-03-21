@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Enable field",
+            "description": "This field will be enabled if the condition is met",
+            "type": "string",
+            "const": "enable"
+        }
+    }
+}

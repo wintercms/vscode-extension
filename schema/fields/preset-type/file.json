@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "File",
+            "description": "The value will be converted to a file name (kebab-case)",
+            "type": "string",
+            "const": "file"
+        }
+    }
+}

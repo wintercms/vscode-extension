@@ -184,6 +184,28 @@
                         }
                     ]
                 },
+                "size": {
+                    "title": "Size",
+                    "description": "Specifies the size of the field. Only used for some field types that may display multiple lines.",
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "$ref": "./fields/size/tiny.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/size/small.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/size/large.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/size/huge.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "./fields/size/giant.json#/definitions/value"
+                        }
+                    ]
+                },
                 "placeholder": {
                     "title": "Placeholder",
                     "description": "Defines an informative hint in the field that disappears when a value is entered",
@@ -211,7 +233,176 @@
                 },
                 "defaultFrom": {
                     "title": "Default value from another field",
-                    "description": "Defines the default value as the value from another field in the form"
+                    "description": "Defines the default value as the value from another field in the form",
+                    "type": "string"
+                },
+                "tab": {
+                    "title": "Tab",
+                    "description": "Defines the tab that this field will be assigned to",
+                    "type": "string"
+                },
+                "cssClass": {
+                    "title": "Container CSS class",
+                    "description": "Defines a custom CSS class to assign to the field container",
+                    "type": "string"
+                },
+                "readOnly": {
+                    "title": "Read-only field",
+                    "description": "If true, the comment cannot be modified, but will be saved with the form data",
+                    "type": "boolean",
+                    "default": false
+                },
+                "disabled": {
+                    "title": "Disable field",
+                    "description": "If true, this field will be prevented from being modified or saved.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "hidden": {
+                    "title": "Hidden field",
+                    "description": "If true, this field will be hidden from the form and will not be saved.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "stretch": {
+                    "title": "Stretch field",
+                    "description": "If true, this field will stretch to fit the entire vertical height of the parent form.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "context": {
+                    "title": "Field context",
+                    "description": "Defines the form contexts that this field will be visible for.",
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array"
+                        }
+                    ]
+                },
+                "dependsOn": {
+                    "title": "Field dependencies",
+                    "description": "Defines the fields that will automatically be refreshed and updated when this field changes",
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array"
+                        }
+                    ]
+                },
+                "trigger": {
+                    "title": "Trigger events",
+                    "description": "Trigger events are used to manipulate form fields based on the conditions of other fields, such as hiding a field if another field is empty or showing a field if another field is checked.",
+                    "type": "object",
+                    "required": ["action", "field", "condition"],
+                    "properties": {
+                        "action": {
+                            "title": "Trigger action",
+                            "description": "The action that will be taken on this form",
+                            "type": "string",
+                            "oneOf": [
+                                {
+                                    "$ref": "./fields/trigger-action/show.json#/definitions/value"
+                                },
+                                {
+                                    "$ref": "./fields/trigger-action/hide.json#/definitions/value"
+                                },
+                                {
+                                    "$ref": "./fields/trigger-action/enable.json#/definitions/value"
+                                },
+                                {
+                                    "$ref": "./fields/trigger-action/disable.json#/definitions/value"
+                                },
+                                {
+                                    "$ref": "./fields/trigger-action/empty.json#/definitions/value"
+                                }
+                            ],
+                            "default": "hide"
+                        },
+                        "field": {
+                            "title": "Triggering field",
+                            "description": "Defines the field that will be checked, for this trigger to fire.",
+                            "type": "string"
+                        },
+                        "condition": {
+                            "title": "Trigger condition",
+                            "description": "Defines the condition that will be checked on the triggering field to determine if this trigger should fire.",
+                            "type": "string"
+                        }
+                    }
+                },
+                "preset": {
+                    "title": "Input preset",
+                    "description": "Input presets allow for a field to be automatically filled in with the data of another field, optionally modifying the value to match a requested format.",
+                    "type": "object",
+                    "required": ["field", "type"],
+                    "properties": {
+                        "field": {
+                            "title": "Preset field",
+                            "description": "Defines the field that will be used to pre-fill this field.",
+                            "type": "string"
+                        },
+                        "type": {
+                            "title": "Preset conversion type",
+                            "description": "Defines the conversion type that will be applied to the copied value",
+                            "type": "string",
+                            "oneOf": [
+                                {
+                                    "$ref": "./fields/preset-type/exact.json#/definitions/value"
+                                },
+                                {
+                                    "$ref": "./fields/preset-type/slug.json#/definitions/value"
+                                },
+                                {
+                                    "$ref": "./fields/preset-type/url.json#/definitions/value"
+                                },
+                                {
+                                    "$ref": "./fields/preset-type/camel.json#/definitions/value"
+                                },
+                                {
+                                    "$ref": "./fields/preset-type/file.json#/definitions/value"
+                                }
+                            ],
+                            "default": "slug"
+                        },
+                        "prefixInput": {
+                            "title": "Preset prefix",
+                            "description": "Defines a custom prefix to add to the start of the value",
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": {
+                    "title": "Required field",
+                    "description": "If true, this field will be required to be filled in, in order to save the form.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "attributes": {
+                    "title": "HTML attributes",
+                    "description": "Defines custom HTML attributes to add to the form field element.",
+                    "type": "object"
+                },
+                "containerAttributes": {
+                    "title": "Container HTML attributes",
+                    "description": "Defines custom HTML attributes to add to the form field container.",
+                    "type": "object"
+                },
+                "permissions": {
+                    "title": "Field permissions",
+                    "description": "Defines the permissions that the user must have in order for the field to be available. Only one permission needs to be granted.",
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array"
+                        }
+                    ]
                 }
             },
             "anyOf": [

@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "URL",
+            "description": "The value will be converted to a slug format (kebab-case), with a forward-slash prefixed",
+            "type": "string",
+            "const": "url"
+        }
+    }
+}
