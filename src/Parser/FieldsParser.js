@@ -4,7 +4,7 @@ const vscode = require('vscode');
 class FieldsParser {
     constructor(document, position) {
         this.document = document;
-        this.structure = YAML.parseDocument(document.getText(new vscode.Range(
+        this.structure = YAML.parseDocument(this.document.getText(new vscode.Range(
             new vscode.Position(0, 0),
             position,
         )));
@@ -14,13 +14,13 @@ class FieldsParser {
     }
 
     isNestedWithin(...hierarchy) {
-        const startIndex = this.scurrentHierarchy.indexOf(hierarchy[0]);
+        const startIndex = this.currentHierarchy.indexOf(hierarchy[0]);
 
         if (startIndex === -1) {
             return false;
         }
 
-        const currentHierarchy = this.getCurrentHierarchy().slice(startIndex, hierarchy.length);
+        const currentHierarchy = this.getCurrentHierarchy().slice(startIndex, startIndex + hierarchy.length);
         const dropIndexes = [];
 
         for (let i = 0; i < hierarchy.length; i += 1) {
@@ -63,6 +63,43 @@ class FieldsParser {
 
     getCurrentValue() {
 
+    }
+
+    getParsedFullStructure() {
+        return YAML.parse(this.document.getText());
+    }
+
+    getFieldNames() {
+        const fields = [];
+        const fullStructure = this.getParsedFullStructure();
+
+        if (fullStructure.fields) {
+            Object.keys(fullStructure.fields).forEach((field) => {
+                if (fields.indexOf(field) === -1) {
+                    fields.push(field);
+                }
+            });
+        }
+
+        if (fullStructure.tabs && fullStructure.tabs.fields) {
+            Object.keys(fullStructure.tabs.fields).forEach((field) => {
+                if (fields.indexOf(field) === -1) {
+                    fields.push(field);
+                }
+            });
+        }
+
+        if (fullStructure.secondaryTabs && fullStructure.secondaryTabs.fields) {
+            Object.keys(fullStructure.secondaryTabs.fields).forEach((field) => {
+                if (fields.indexOf(field) === -1) {
+                    fields.push(field);
+                }
+            });
+        }
+
+        fields.sort();
+
+        return fields;
     }
 }
 

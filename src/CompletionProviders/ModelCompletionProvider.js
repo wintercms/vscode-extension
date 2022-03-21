@@ -12,16 +12,12 @@ class ModelCompletionProvider {
 
     provideCompletionItems(document, position, token) {
         const line = document.lineAt(position);
-        console.log(line);
 
         if (line.isEmptyOrWhitespace || token.isCancellationRequested) {
             return [];
         }
 
-        const { text } = line;
-        console.log(text);
         if (/^( *model(Class)?: )/i.test(text)) {
-            console.log('Hit model');
             const startPos = new vscode.Position(position.line, /^( *model(Class)?: )/i.exec(text)[1].length);
             const endPos = position;
 

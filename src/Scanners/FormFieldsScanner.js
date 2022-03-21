@@ -37,13 +37,6 @@ class FormFieldsScanner {
             (results) => {
                 if (results.length > 0) {
                     results.forEach((path) => {
-                        console.log({
-                            path: path.path,
-                            relative: path.path.replace(
-                                vscode.workspace.getWorkspaceFolder(vscode.Uri.file(path.path)).uri.path,
-                                '~',
-                            ),
-                        });
                         this.paths.push({
                             path: path.path,
                             relative: path.path.replace(
