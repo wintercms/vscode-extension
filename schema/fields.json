@@ -338,43 +338,50 @@
                 "preset": {
                     "title": "Input preset",
                     "description": "Input presets allow for a field to be automatically filled in with the data of another field, optionally modifying the value to match a requested format.",
-                    "type": "object",
-                    "required": ["field", "type"],
-                    "properties": {
-                        "field": {
-                            "title": "Preset field",
-                            "description": "Defines the field that will be used to pre-fill this field.",
+                    "oneOf": [
+                        {
                             "type": "string"
                         },
-                        "type": {
-                            "title": "Preset conversion type",
-                            "description": "Defines the conversion type that will be applied to the copied value",
-                            "type": "string",
-                            "oneOf": [
-                                {
-                                    "$ref": "./fields/preset-type/exact.json#/definitions/value"
+                        {
+                            "type": "object",
+                            "required": ["field", "type"],
+                            "properties": {
+                                "field": {
+                                    "title": "Preset field",
+                                    "description": "Defines the field that will be used to pre-fill this field.",
+                                    "type": "string"
                                 },
-                                {
-                                    "$ref": "./fields/preset-type/slug.json#/definitions/value"
+                                "type": {
+                                    "title": "Preset conversion type",
+                                    "description": "Defines the conversion type that will be applied to the copied value",
+                                    "type": "string",
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./fields/preset-type/exact.json#/definitions/value"
+                                        },
+                                        {
+                                            "$ref": "./fields/preset-type/slug.json#/definitions/value"
+                                        },
+                                        {
+                                            "$ref": "./fields/preset-type/url.json#/definitions/value"
+                                        },
+                                        {
+                                            "$ref": "./fields/preset-type/camel.json#/definitions/value"
+                                        },
+                                        {
+                                            "$ref": "./fields/preset-type/file.json#/definitions/value"
+                                        }
+                                    ],
+                                    "default": "slug"
                                 },
-                                {
-                                    "$ref": "./fields/preset-type/url.json#/definitions/value"
-                                },
-                                {
-                                    "$ref": "./fields/preset-type/camel.json#/definitions/value"
-                                },
-                                {
-                                    "$ref": "./fields/preset-type/file.json#/definitions/value"
+                                "prefixInput": {
+                                    "title": "Preset prefix",
+                                    "description": "Defines a custom prefix to add to the start of the value",
+                                    "type": "string"
                                 }
-                            ],
-                            "default": "slug"
-                        },
-                        "prefixInput": {
-                            "title": "Preset prefix",
-                            "description": "Defines a custom prefix to add to the start of the value",
-                            "type": "string"
+                            }
                         }
-                    }
+                    ]
                 },
                 "required": {
                     "title": "Required field",
