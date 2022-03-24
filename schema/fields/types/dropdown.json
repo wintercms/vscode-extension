@@ -6,6 +6,36 @@
             "description": "Renders a dropdown with specified options",
             "type": "string",
             "const": "dropdown"
+        },
+        "properties": {
+            "properties": {
+                "options": {
+                    "title": "Dropdown options",
+                    "description": "Defines the available options for this dropdown.",
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "object"
+                        },
+                        {
+                            "type": "array"
+                        }
+                    ]
+                },
+                "emptyOption": {
+                    "title": "Empty option",
+                    "description": "Defines the text for the empty option, which can be used to send an empty value on save.",
+                    "type": "string"
+                },
+                "showSearch": {
+                    "title": "Show search",
+                    "description": "If true, a search query can be typed in the dropdown to filter available options.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
         }
     }
 }

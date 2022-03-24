@@ -417,22 +417,20 @@
                     "then": {
                         "$ref": "./fields/types/number.json#/definitions/properties"
                     }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/dropdown.json#/definitions/value"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "./fields/types/dropdown.json#/definitions/properties"
+                    }
                 }
             ]
-        },
-        "tabs": {
-            "type": "object",
-            "$comment": "https://wintercms.com/docs/backend/forms#form-tab-options",
-            "required": [
-                "fields"
-            ],
-            "properties": {
-                "fields": {
-                    "title": "Primary tab fields",
-                    "description": "Defines the fields for this form that will be displayed within the primary tabs",
-                    "$ref": "#/definitions/fields"
-                }
-            }
         }
     },
     "properties": {
@@ -443,8 +441,13 @@
         },
         "tabs": {
             "title": "Primary tabs",
-            "description": "Enables the primary tab navigation on this form",
-            "$ref": "#/definitions/tabs"
+            "description": "Enables and defines options for the form's primary tabs",
+            "$ref": "./tabs.json"
+        },
+        "secondaryTabs": {
+            "title": "Secondary tabs",
+            "description": "Enables and defines options for the form's secondary tabs",
+            "$ref": "./tabs.json"
         }
     }
 }

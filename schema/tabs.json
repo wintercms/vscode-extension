@@ -1,0 +1,47 @@
+{
+    "title": "Tabs",
+    "description": "Defines options for form tabs",
+    "$comment": "https://wintercms.com/docs/backend/forms#form-tab-options",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "required": [
+        "fields"
+    ],
+    "properties": {
+        "fields": {
+            "title": "Tab fields",
+            "description": "Defines the fields that will appear within these tabs, based on the 'tab' property of the field.",
+            "$ref": "./fields.json#/definitions/fields"
+        },
+        "stretch": {
+            "title": "Stretch tab",
+            "description": "If true, this tab's content will stretch to the full vertical height of the parent element.",
+            "type": "boolean"
+        },
+        "defaultTab": {
+            "title": "Default tab name",
+            "description": "Defines the name of the default tab that fields are assigned to.",
+            "type": "string"
+        },
+        "icons": {
+            "title": "Tab icons",
+            "description": "Assigns icons to the tabs, using tab names as the key.",
+            "type": "object"
+        },
+        "lazy": {
+            "title": "Lazy load tab?",
+            "description": "If true, this tab will be lazy loaded, only loading the fields within when clicked on. This increases performance on forms with a large number of fields within the tab.",
+            "type": "boolean"
+        },
+        "cssClass": {
+            "title": "Tab CSS class",
+            "description": "Defines a custom CSS class to assign to the tab container",
+            "type": "string"
+        },
+        "paneCssClass": {
+            "title": "Tab pane CSS class",
+            "description": "Defines a custom CSS class to assign to the tab pane (content)",
+            "type": "string"
+        }
+    }
+}
