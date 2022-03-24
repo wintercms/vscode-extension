@@ -6,6 +6,15 @@
             "description": "identical to a partial field but renders inside a hint container that can be hidden by the user",
             "type": "string",
             "const": "hint"
+        },
+        "properties": {
+            "properties": {
+                "path": {
+                    "title": "Partial path",
+                    "description": "Defines the partial file that will be rendered for this field",
+                    "type": "string"
+                }
+            }
         }
     }
 }

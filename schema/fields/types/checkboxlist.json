@@ -2,10 +2,35 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "definitions": {
         "value": {
-            "title": "Checkboxlist field type",
+            "title": "Checkbox List field type",
             "description": "Renders a list of checkboxes",
             "type": "string",
             "const": "checkboxlist"
+        },
+        "properties": {
+            "properties": {
+                "options": {
+                    "title": "Checkbox list options",
+                    "description": "Defines the available options for this checkbox list.",
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "object"
+                        },
+                        {
+                            "type": "array"
+                        }
+                    ]
+                },
+                "quickselect": {
+                    "title": "Quick select links",
+                    "description": "If true, the 'Select All' and 'Select None' links will be shown above the checkbox list.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
         }
     }
 }

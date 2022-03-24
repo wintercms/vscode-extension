@@ -6,6 +6,25 @@
             "description": "Renders a list, where only one item can be selected at a time",
             "type": "string",
             "const": "balloon-selector"
+        },
+        "properties": {
+            "properties": {
+                "options": {
+                    "title": "Balloon options",
+                    "description": "Defines the available options for this balloon selector.",
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "object"
+                        },
+                        {
+                            "type": "array"
+                        }
+                    ]
+                }
+            }
         }
     }
 }

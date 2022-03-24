@@ -6,6 +6,25 @@
             "description": "Renders a list of radio options, where only one item can be selected at a time",
             "type": "string",
             "const": "radio"
+        },
+        "properties": {
+            "properties": {
+                "options": {
+                    "title": "Radio options",
+                    "description": "Defines the available options for this radio list.",
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "object"
+                        },
+                        {
+                            "type": "array"
+                        }
+                    ]
+                }
+            }
         }
     }
 }

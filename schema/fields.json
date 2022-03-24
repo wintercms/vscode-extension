@@ -422,7 +422,8 @@
                             "type": {
                                 "$ref": "./fields/types/number.json#/definitions/value"
                             }
-                        }
+                        },
+                        "required": ["type"]
                     },
                     "then": {
                         "$ref": "./fields/types/number.json#/definitions/properties"
@@ -434,10 +435,89 @@
                             "type": {
                                 "$ref": "./fields/types/dropdown.json#/definitions/value"
                             }
-                        }
+                        },
+                        "required": ["type"]
                     },
                     "then": {
                         "$ref": "./fields/types/dropdown.json#/definitions/properties"
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/radio.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/radio.json#/definitions/properties"
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/balloon-selector.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/balloon-selector.json#/definitions/properties"
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/checkboxlist.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/checkboxlist.json#/definitions/properties"
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/switch.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/switch.json#/definitions/properties"
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/partial.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/partial.json#/definitions/properties"
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/hint.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/hint.json#/definitions/properties"
                     }
                 }
             ]

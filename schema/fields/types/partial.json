@@ -6,6 +6,15 @@
             "description": "Renders a partial",
             "type": "string",
             "const": "partial"
+        },
+        "properties": {
+            "properties": {
+                "path": {
+                    "title": "Partial path",
+                    "description": "Defines the partial file that will be rendered for this field",
+                    "type": "string"
+                }
+            }
         }
     }
 }
