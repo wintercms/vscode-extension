@@ -1,7 +1,13 @@
 const vscode = require('vscode');
 const FieldsParser = require('../Parser/FieldsParser');
+const PartialScanner = require('../Scanners/PartialScanner');
 
 class FieldsCompletionProvider {
+    constructor(partialScanner, modelScanner) {
+        this.partialScanner = partialScanner;
+        this.modelScanner = modelScanner;
+    }
+
     provideCompletionItems(document, position, token) {
         const line = document.lineAt(position);
 
@@ -18,6 +24,9 @@ class FieldsCompletionProvider {
         }
         if (parser.isNestedWithin('fields', '*', 'defaultFrom')) {
             return this.processDefaultFrom(parser, document, position);
+        }
+        if (parser.isNestedWithin('fields', '*', 'path')) {
+            return this.processPath(parser, document, position);
         }
         if (parser.isNestedWithin('fields', '*', 'trigger', 'field')) {
             return this.processTriggerField(parser, document, position);
@@ -119,6 +128,32 @@ class FieldsCompletionProvider {
         return fields.map((field) => ({
             label: field,
             insertText: field,
+            range: new vscode.Range(startPos, endPos),
+        }));
+    }
+
+    processPath(parser, document, position) {
+        const paths = this.partialScanner.getPaths(true);
+        const line = document.lineAt(position);
+        const { text } = line;
+
+        console.log(paths);
+
+        // Find correct starting point, as dependsOn can be a string or an array
+        let startPos;
+        let endPos;
+
+        if (/^ *path: */i.test(text)) {
+            // String
+            startPos = new vscode.Position(position.line, /^( *path: *)/i.exec(text)[1].length);
+            endPos = position;
+        } else {
+            return [];
+        }
+
+        return paths.map((path) => ({
+            label: path,
+            insertText: path,
             range: new vscode.Range(startPos, endPos),
         }));
     }
