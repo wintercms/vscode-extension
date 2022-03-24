@@ -158,6 +158,9 @@
                         },
                         {
                             "$ref": "./fields/types/taglist.json#/definitions/value"
+                        },
+                        {
+                            "type": "string"
                         }
                     ]
                 },
