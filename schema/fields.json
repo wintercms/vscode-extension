@@ -190,28 +190,6 @@
                         }
                     ]
                 },
-                "size": {
-                    "title": "Size",
-                    "description": "Specifies the size of the field. Only used for some field types that may display multiple lines.",
-                    "type": "string",
-                    "oneOf": [
-                        {
-                            "$ref": "./fields/size/tiny.json#/definitions/value"
-                        },
-                        {
-                            "$ref": "./fields/size/small.json#/definitions/value"
-                        },
-                        {
-                            "$ref": "./fields/size/large.json#/definitions/value"
-                        },
-                        {
-                            "$ref": "./fields/size/huge.json#/definitions/value"
-                        },
-                        {
-                            "$ref": "./fields/size/giant.json#/definitions/value"
-                        }
-                    ]
-                },
                 "placeholder": {
                     "title": "Placeholder",
                     "description": "Defines an informative hint in the field that disappears when a value is entered",
@@ -423,6 +401,19 @@
                     "if": {
                         "properties": {
                             "type": {
+                                "$ref": "./fields/types/textarea.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/textarea.json#/definitions/properties"
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
                                 "$ref": "./fields/types/number.json#/definitions/value"
                             }
                         },
@@ -430,6 +421,19 @@
                     },
                     "then": {
                         "$ref": "./fields/types/number.json#/definitions/properties"
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/range.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/range.json#/definitions/properties"
                     }
                 },
                 {

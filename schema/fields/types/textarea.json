@@ -10,9 +10,26 @@
         "properties": {
             "properties": {
                 "size": {
-                    "description": "Size field textarea",
+                    "title": "Size",
+                    "description": "Specifies the size of the textarea.",
                     "type": "string",
-                    "default": "large"
+                    "oneOf": [
+                        {
+                            "$ref": "../fields/size/tiny.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/size/small.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/size/large.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/size/huge.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/size/giant.json#/definitions/value"
+                        }
+                    ]
                 }
             }
         }
