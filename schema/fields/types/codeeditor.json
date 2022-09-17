@@ -3,9 +3,153 @@
     "definitions": {
         "value": {
             "title": "Codeeditor field type",
-            "description": "Renders a plaintext editor for formatted code or markup",
+            "description": "Renders a code editor for formatted code or markup",
             "type": "string",
             "const": "codeeditor"
+        },
+        "properties": {
+            "properties": {
+                "autoclosing": {
+                    "title": "Auto-closing",
+                    "description": "Automatically close tags and special boundary characters",
+                    "type": "boolean",
+                    "default": true
+                },
+                "autocompletion": {
+                    "title": "Autocompletion",
+                    "description": "Sets the auto-completion mode",
+                    "type": "string",
+                    "default": "manual",
+                    "oneOf": [
+                        {
+                            "$ref": "../fields/autcompletion/manual.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/autcompletion/basic.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/autcompletion/live.json#/definitions/value"
+                        }
+                    ]
+                },
+                "codeFolding": {
+                    "title": "Code folding",
+                    "description": "Sets the code folding mode",
+                    "type": "string",
+                    "default": "manual",
+                    "oneOf": [
+                        {
+                            "$ref": "../fields/codeFolding/manual.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/codeFolding/markbegin.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/codeFolding/markend.json#/definitions/value"
+                        }
+                    ]
+                },
+                "displayIndentGuides": {
+                    "title": "Display indent guides",
+                    "description": "If true, indentation guides will be shown in the editor",
+                    "type": "boolean",
+                    "default": true
+                },
+                "enableSnippets": {
+                    "title": "Enable snippets",
+                    "description": "If true, this allows the editor to use snippets",
+                    "type": "boolean",
+                    "default": true
+                },
+                "fontSize": {
+                    "title": "Font size",
+                    "description": "Defines the size of the font in the editor",
+                    "type": "number",
+                    "default": 12
+                },
+                "highlightActiveLine": {
+                    "title": "Highlight active line",
+                    "description": "If true, the current active line will be highlighted",
+                    "type": "boolean",
+                    "default": true
+                },
+                "language": {
+                    "title": "Language",
+                    "description": "Sets the language that this editor will highlight (eg. php, html, css, etc.)",
+                    "type": "string",
+                    "default": "php"
+                },
+                "margin": {
+                    "title": "Margin",
+                    "description": "Sets the editor margin",
+                    "type": "number",
+                    "default": 0
+                },
+                "showGutter": {
+                    "title": "Show gutter",
+                    "description": "If true, the gutter with line numbers will be shown",
+                    "type": "boolean",
+                    "default": true
+                },
+                "showInvisibles": {
+                    "title": "Show invisible characters",
+                    "description": "If true, invisible characters such as spaces, tabs and line breaks will be visible",
+                    "type": "boolean",
+                    "default": false
+                },
+                "showPrintMargin": {
+                    "title": "Show print margin",
+                    "description": "If true, the print margin will be shown",
+                    "type": "boolean",
+                    "default": false
+                },
+                "size": {
+                    "title": "Size",
+                    "description": "Specifies the size of the code editor.",
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "$ref": "../fields/size/tiny.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/size/small.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/size/large.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/size/huge.json#/definitions/value"
+                        },
+                        {
+                            "$ref": "../fields/size/giant.json#/definitions/value"
+                        }
+                    ]
+                },
+                "tabSize": {
+                    "title": "Tab size",
+                    "description": "Defines how many spaces represent one tab in the editor",
+                    "type": "number",
+                    "default": 4
+                },
+                "theme": {
+                    "title": "Theme",
+                    "description": "Defines the editor theme.",
+                    "type": "string",
+                    "default": "twilight"
+                },
+                "useSoftTabs": {
+                    "title": "Use soft tabs",
+                    "description": "If true, spaces will be used for indentation, instead of tabs.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "wrapWords": {
+                    "title": "Wrap words",
+                    "description": "If true, long words will be broken onto a new line.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
         }
     }
 }

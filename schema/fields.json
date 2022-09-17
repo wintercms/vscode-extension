@@ -526,6 +526,19 @@
                     "then": {
                         "$ref": "./fields/types/hint.json#/definitions/properties"
                     }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/codeeditor.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/codeeditor.json#/definitions/properties"
+                    }
                 }
             ]
         }

@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Manual code folding",
+            "description": "Allows the user to define code folding points",
+            "type": "string",
+            "const": "manual"
+        }
+    }
+}

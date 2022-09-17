@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Mark begin",
+            "description": "Show code folding toggles at the beginning of a code block",
+            "type": "string",
+            "const": "markbegin"
+        }
+    }
+}
