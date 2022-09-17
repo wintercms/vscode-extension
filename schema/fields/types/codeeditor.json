@@ -39,13 +39,13 @@
                     "default": "manual",
                     "oneOf": [
                         {
-                            "$ref": "../fields/codeFolding/manual.json#/definitions/value"
+                            "$ref": "../fields/code-folding/manual.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/codeFolding/markbegin.json#/definitions/value"
+                            "$ref": "../fields/code-folding/markbegin.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/codeFolding/markend.json#/definitions/value"
+                            "$ref": "../fields/code-folding/markend.json#/definitions/value"
                         }
                     ]
                 },
