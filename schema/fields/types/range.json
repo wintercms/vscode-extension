@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "value": {
+            "title": "Range field type",
+            "description": "Renders a slider that accepts numbers only",
+            "type": "string",
+            "const": "range"
+        },
+        "properties": {
+            "properties": {
+                "step": {
+                    "description": "The amount to iterate up or down",
+                    "type": "number",
+                    "default": 1
+                },
+                "min": {
+                    "description": "The minimum number allowed for this field",
+                    "type": "number",
+                    "default": 0
+                },
+                "max": {
+                    "description": "The maximum number allowed for this field",
+                    "type": "number",
+                    "default": 100
+                }
+            }
+        }
+    }
+}

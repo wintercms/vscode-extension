@@ -82,6 +82,9 @@
                             "$ref": "./fields/types/number.json#/definitions/value"
                         },
                         {
+                            "$ref": "./fields/types/range.json#/definitions/value"
+                        },
+                        {
                             "$ref": "./fields/types/email.json#/definitions/value"
                         },
                         {
