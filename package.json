@@ -85,7 +85,7 @@
             {
                 "language": "wintercms-twig",
                 "scopeName": "text.html.twig.wintercms",
-                "path": "./syntax/twig.wintercms.tmLanguage"
+                "path": "./syntax/twig.wintercms.tmLanguage.json"
             }
         ],
         "yamlValidation": [
