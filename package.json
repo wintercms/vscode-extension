@@ -27,7 +27,7 @@
         "url": "https://github.com/wintercms/vscode-extension.git"
     },
     "sponsor": {
-        "url": "https://github.com/sponsors/LukeTowers"
+        "url": "https://github.com/sponsors/wintercms"
     },
     "engines": {
         "vscode": "^1.63.0"
