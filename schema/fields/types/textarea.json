@@ -15,19 +15,19 @@
                     "type": "string",
                     "oneOf": [
                         {
-                            "$ref": "../fields/size/tiny.json#/definitions/value"
+                            "$ref": "../../fields/size/tiny.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/size/small.json#/definitions/value"
+                            "$ref": "../../fields/size/small.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/size/large.json#/definitions/value"
+                            "$ref": "../../fields/size/large.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/size/huge.json#/definitions/value"
+                            "$ref": "../../fields/size/huge.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/size/giant.json#/definitions/value"
+                            "$ref": "../../fields/size/giant.json#/definitions/value"
                         }
                     ]
                 }

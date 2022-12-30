@@ -22,13 +22,13 @@
                     "default": "manual",
                     "oneOf": [
                         {
-                            "$ref": "../fields/autcompletion/manual.json#/definitions/value"
+                            "$ref": "../../fields/autocompletion/manual.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/autcompletion/basic.json#/definitions/value"
+                            "$ref": "../../fields/autocompletion/basic.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/autcompletion/live.json#/definitions/value"
+                            "$ref": "../../fields/autocompletion/live.json#/definitions/value"
                         }
                     ]
                 },
@@ -39,13 +39,13 @@
                     "default": "manual",
                     "oneOf": [
                         {
-                            "$ref": "../fields/code-folding/manual.json#/definitions/value"
+                            "$ref": "../../fields/code-folding/manual.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/code-folding/markbegin.json#/definitions/value"
+                            "$ref": "../../fields/code-folding/markbegin.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/code-folding/markend.json#/definitions/value"
+                            "$ref": "../../fields/code-folding/markend.json#/definitions/value"
                         }
                     ]
                 },
@@ -109,19 +109,19 @@
                     "type": "string",
                     "oneOf": [
                         {
-                            "$ref": "../fields/size/tiny.json#/definitions/value"
+                            "$ref": "../../fields/size/tiny.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/size/small.json#/definitions/value"
+                            "$ref": "../../fields/size/small.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/size/large.json#/definitions/value"
+                            "$ref": "../../fields/size/large.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/size/huge.json#/definitions/value"
+                            "$ref": "../../fields/size/huge.json#/definitions/value"
                         },
                         {
-                            "$ref": "../fields/size/giant.json#/definitions/value"
+                            "$ref": "../../fields/size/giant.json#/definitions/value"
                         }
                     ]
                 },

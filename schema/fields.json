@@ -539,6 +539,19 @@
                     "then": {
                         "$ref": "./fields/types/codeeditor.json#/definitions/properties"
                     }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "$ref": "./fields/types/colorpicker.json#/definitions/value"
+                            }
+                        },
+                        "required": ["type"]
+                    },
+                    "then": {
+                        "$ref": "./fields/types/colorpicker.json#/definitions/properties"
+                    }
                 }
             ]
         }

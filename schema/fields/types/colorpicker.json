@@ -6,6 +6,46 @@
             "description": "Renders controls to select a color value",
             "type": "string",
             "const": "colorpicker"
+        },
+        "properties": {
+            "properties": {
+                "availableColors": {
+                    "title": "Available colors",
+                    "description": "Defines the available colors in the predefined color list. If not set, the widget will use the global available colors.",
+                    "type": "array"
+                },
+                "allowCustom": {
+                    "title": "Allow custom color",
+                    "description": "If false, only colors specified in the 'availableColors' property will be available for selection, and the color palette will not be displayed.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "allowEmpty": {
+                    "title": "Allow empty selection",
+                    "description": "If true, you will be able to set the color picker value as an empty value.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "formats": {
+                    "title": "Formats",
+                    "description": "Defines the color format for the value. Can be a string or an array of values out of 'cmyk', 'hex', 'hsl' and 'rgb'. Specifying 'all' will allow all types.",
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array"
+                        }
+                    ],
+                    "default": "hex"
+                },
+                "showAlpha": {
+                    "title": "Show opacity slider",
+                    "description": "If true, you will be able to set the alpha channel of the color using an opacity slider.",
+                    "type": "boolean",
+                    "default": false
+                }
+            }
         }
     }
 }
