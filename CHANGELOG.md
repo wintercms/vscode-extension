@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.0 - 9th January, 2023
+
+- Added highlighting of Syntax Parser variables and tags within Twig content.
+- Added highlighting of interpolated variables within Twig double-quoted strings.
+- Added definitions of additional configuration options for several fields and widgets, including dropdowns, color pickers, code editors and tabs.
+- Fixed support for custom field types.
+- Added support for short-hand preset definition.
+
 ## v0.2.0 - 21st March, 2022
 
 - Added all field types and widgets to form definition.
