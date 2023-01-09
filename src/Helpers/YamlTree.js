@@ -1,17 +1,17 @@
-const YAML = require('yaml');
+// const YAML = require('yaml');
 
 class YamlTree {
     constructor(yaml) {
         this.yaml = yaml;
     }
 
-    isPath(...path) {
+    // isPath(...path) {
 
-    }
+    // }
 
     hierarchy() {
-        const doc = YAML.parseDocument(this.yaml);
-        console.log(doc);
+        // const doc = YAML.parseDocument(this.yaml);
+        // console.log(doc);
     }
 }
 

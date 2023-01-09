@@ -1,6 +1,6 @@
 const vscode = require('vscode');
 const FieldsParser = require('../Parser/FieldsParser');
-const PartialScanner = require('../Scanners/PartialScanner');
+// const PartialScanner = require('../Scanners/PartialScanner');
 
 class FieldsCompletionProvider {
     constructor(partialScanner, modelScanner) {
@@ -137,7 +137,7 @@ class FieldsCompletionProvider {
         const line = document.lineAt(position);
         const { text } = line;
 
-        console.log(paths);
+        // console.log(paths);
 
         // Find correct starting point, as dependsOn can be a string or an array
         let startPos;

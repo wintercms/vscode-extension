@@ -55,7 +55,6 @@ class PartialScanner {
         // );
         // this.activateWatchers();
     }
-
 }
 
 module.exports = PartialScanner;
