@@ -55,7 +55,6 @@ class FormFieldsScanner {
         // );
         // this.activateWatchers();
     }
-
 }
 
 module.exports = FormFieldsScanner;
