@@ -758,9 +758,73 @@
               "name": "punctuation.definition.string.end.twig"
             }
           },
-          "name": "string.quoted.double.twig"
+          "name": "string.quoted.double.twig",
+          "patterns": [
+            {
+                "include": "#twig-string-variables"
+            }
+          ]
         }
       ]
+    },
+    "twig-string-variables": {
+        "begin": "(?:(?<!\\\\)|(?<=\\\\\\\\))#\\{",
+        "beginCaptures": {
+          "0": {
+            "name": "punctuation.section.tag.twig"
+          }
+        },
+        "end": "\\}",
+        "endCaptures": {
+          "0": {
+            "name": "punctuation.section.tag.twig"
+          }
+        },
+        "name": "meta.tag.template.value.twig",
+        "patterns": [
+          {
+            "include": "#twig-constants"
+          },
+          {
+            "include": "#twig-operators"
+          },
+          {
+            "include": "#twig-functions-warg"
+          },
+          {
+            "include": "#twig-functions"
+          },
+          {
+            "include": "#twig-macros"
+          },
+          {
+            "include": "#twig-objects"
+          },
+          {
+            "include": "#twig-properties"
+          },
+          {
+            "include": "#twig-filters-warg"
+          },
+          {
+            "include": "#twig-filters"
+          },
+          {
+            "include": "#twig-filters-warg-ud"
+          },
+          {
+            "include": "#twig-filters-ud"
+          },
+          {
+            "include": "#twig-strings"
+          },
+          {
+            "include": "#twig-arrays"
+          },
+          {
+            "include": "#twig-hashes"
+          }
+        ]
     },
     "twig-arrays": {
       "begin": "(?<=[\\s\\(\\{\\[:,])\\[",
