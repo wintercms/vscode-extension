@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.1 - 12th January, 2023
+
+- Updated Node dependencies to fix potential security issue.
+
 ## v0.3.0 - 9th January, 2023
 
 - Added highlighting of Syntax Parser variables and tags within Twig content.
