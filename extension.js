@@ -5,6 +5,7 @@ const FieldsCompletionProvider = require('./src/CompletionProviders/FieldsComple
 const FormFieldsScanner = require('./src/Scanners/FormFieldsScanner');
 const ModelScanner = require('./src/Scanners/ModelScanner');
 const PartialScanner = require('./src/Scanners/PartialScanner');
+const PluginFileScanner = require('./src/Scanners/PluginFileScanner');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -26,6 +27,10 @@ function activate(context) {
     // Initiate partial scanner
     const partialScanner = new PartialScanner();
     partialScanner.scan();
+
+    // Initiate provider file scanner
+    const providerScanner = new PluginFileScanner();
+    providerScanner.scan();
 
     // Register completion providers
     context.subscriptions.push(vscode.languages.registerCompletionItemProvider(
