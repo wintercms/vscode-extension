@@ -36,3 +36,12 @@ This extension is currently in preview and is not feature-complete.
 
 The YAML validation will require the [YAML plugin](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) provided by Red Hat. This will be installed automatically with this extension.
 
+## Note
+
+To enable Emmet in `.htm` files, add `"wintercms": "html"` to `emmet.includeLanguages` setting in your `settings.json` in vscode.<br>
+
+```
+"emmet.includeLanguages": {
+    "wintercms": "html"
+}
+```
