@@ -38,7 +38,7 @@ The YAML validation will require the [YAML plugin](https://marketplace.visualstu
 
 ## Note
 
-To enable Emmet in `.htm` files, add `"wintercms": "html"` to `emmet.includeLanguages` setting in your `settings.json` in vscode.<br>
+To enable [Emmet features](https://docs.emmet.io/) in theme templates, add the following to the `emmet.includeLanguages` setting in your `settings.json` in VSCode.
 
 ```
 "emmet.includeLanguages": {
