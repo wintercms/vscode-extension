@@ -31,7 +31,10 @@
         "lazy": {
             "title": "Lazy load tab",
             "description": "Defines the tabs that will be lazy loaded, only loading the fields within when clicked on. This increases performance on forms with a large number of fields within the tab.",
-            "type": "object"
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         },
         "cssClass": {
             "title": "Tab CSS class",
