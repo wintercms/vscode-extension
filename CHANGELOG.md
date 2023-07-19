@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.1 - 19th July, 2023
+
+- Two hot-fixes: remove strict value checking on field types, and fix `lazy` property schema.
+
 ## v0.4.0 - 19th July, 2023
 
 - Added highlighting of Block templates for the Winter CMS [Blocks plugin](https://github.com/wintercms/wn-blocks-plugin).
