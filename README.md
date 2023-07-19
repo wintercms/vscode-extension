@@ -10,7 +10,7 @@ This extension is currently in preview and is not feature-complete.
 
 **Currently available**
 
-- Syntax highlighting for CMS template files.
+- Syntax highlighting for CMS template files and Winter CMS Block templates.
 - Twig definition for Winter-provided Twig functions and filters.
 
 **Planned for v1.0.0**

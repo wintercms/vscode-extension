@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.4.0 - 19th July, 2023
+
+- Added highlighting of Block templates for the Winter CMS [Blocks plugin](https://github.com/wintercms/wn-blocks-plugin).
+- Fixed `lazy` property for tabs definition (thanks @AIC-BV)
+- Added note about enabling Emmet shortcuts to readme (thanks @joaocosta-azores)
+
 ## v0.3.1 - 12th January, 2023
 
 - Updated Node dependencies to fix potential security issue.

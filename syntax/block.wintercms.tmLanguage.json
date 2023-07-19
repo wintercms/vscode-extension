@@ -1,0 +1,76 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Winter CMS Block Template",
+    "scopeName": "text.html.wintercms-block",
+    "patterns": [
+        {
+            "name": "source.yaml.wintercms",
+            "begin": "^((\\b([a-zA-Z0-9_.-]+)\\b\\s*(:))|((#)(.*$\\n)))",
+            "beginCaptures": {
+                "3": {
+                    "name": "entity.name.tag.yaml"
+                },
+                "4": {
+                    "name": "punctuation.separator.key-value.mapping.yaml"
+                },
+                "5": {
+                    "name": "comment.line.number-sign.yaml"
+                },
+                "6": {
+                    "name": "punctuation.definition.comment.yaml"
+                }
+            },
+            "while": "^(?!===?)",
+            "whileCaptures": {
+                "0": {
+                    "name": "punctuation.winter.section.delimiter"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.yaml#comment"
+                },
+                {
+                    "include": "source.yaml#property"
+                },
+                {
+                    "include": "source.yaml#directive"
+                },
+                {
+                    "include": "source.yaml#node"
+                }
+            ]
+        },
+        {
+            "contentName": "source.php.wintercms",
+            "begin": "^\\s*(<\\?(php|=)?)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.section.embedded.begin.php"
+                }
+            },
+            "end": "((\\?>)|(^\\s*===?\\s*$))",
+            "endCaptures": {
+                "2": {
+                    "name": "punctuation.section.embedded.end.php"
+                },
+                "3": {
+                    "name": "punctuation.winter.section.delimiter"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.php"
+                }
+            ]
+        },
+        {
+            "contentName": "text.html.wintercms",
+            "patterns": [
+                {
+                    "include": "text.html.twig.wintercms"
+                }
+            ]
+        }
+    ]
+}

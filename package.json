@@ -58,6 +58,24 @@
                 }
             },
             {
+                "id": "wintercms-block",
+                "aliases": [
+                    "Winter CMS Block Template",
+                    "wintercms-block"
+                ],
+                "filenamePatterns": [
+                    "**/themes/*/blocks/*.block",
+                    "**/themes/*/blocks/**/*.block",
+                    "**/plugins/*/*/blocks/*.block",
+                    "**/plugins/*/*/blocks/**/*.block"
+                ],
+                "configuration": "./language/wintercms-block-language-configuration.json",
+                "icon": {
+                    "light": "./language/icons/winter-light.png",
+                    "dark": "./language/icons/winter-dark.png"
+                }
+            },
+            {
                 "id": "wintercms-twig",
                 "aliases": [
                     "Winter CMS Template (Twig)",
@@ -77,6 +95,17 @@
                 "path": "./syntax/wintercms.tmLanguage.json",
                 "embeddedLanguages": {
                     "source.ini.wintercms": "ini",
+                    "source.php.wintercms": "php",
+                    "text.html.wintercms": "wintercms-twig",
+                    "text.html.twig.wintercms": "wintercms-twig"
+                }
+            },
+            {
+                "language": "wintercms-block",
+                "scopeName": "text.html.wintercms-block",
+                "path": "./syntax/block.wintercms.tmLanguage.json",
+                "embeddedLanguages": {
+                    "source.yaml.wintercms": "yaml",
                     "source.php.wintercms": "php",
                     "text.html.wintercms": "wintercms-twig",
                     "text.html.twig.wintercms": "wintercms-twig"
