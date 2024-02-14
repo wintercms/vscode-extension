@@ -1087,7 +1087,7 @@
       "contentName": "meta.function.arguments.twig"
     },
     "twig-filters-warg": {
-      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|finish|format|join|merge|number_format|replace|resize|round|slice|split|trans|transchoice|trim)(\\()",
+      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|finish|format|join|merge|number_format|replace|resize|round|slice|slug|split|trans|transchoice|trim)(\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.twig"
