@@ -1087,7 +1087,7 @@
       "contentName": "meta.function.arguments.twig"
     },
     "twig-filters-warg": {
-      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|format|join|merge|number_format|replace|resize|round|slice|split|trim)(\\()",
+      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|finish|format|join|merge|number_format|replace|resize|round|slice|split|trans|transchoice|trim)(\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.twig"
@@ -1151,7 +1151,7 @@
           "name": "support.function.twig"
         }
       },
-      "match": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(abs|app|asset|capitalize|e(?:scape)?|first|imageWidth|imageHeight|join|(?:json|url)_encode|keys|last|length|lower|media|nl2br|number_format|page|raw|reverse|round|sort|striptags|theme|title|trim|upper)(?=[\\s\\|\\]\\}\\):,]|\\.\\.|\\*\\*)"
+      "match": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(abs|app|asset|camel|capitalize|e(?:scape)?|first|imageWidth|imageHeight|join|(?:json|url)_encode|keys|last|length|lower|md|md_(?:line|safe)|media|nl2br|number_format|page|plural|raw|reverse|round|singular|slug|snake|sort|striptags|studly|theme|title|trans|trim|upper)(?=[\\s\\|\\]\\}\\):,]|\\.\\.|\\*\\*)"
     },
     "twig-filters-warg-ud": {
       "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\()",
