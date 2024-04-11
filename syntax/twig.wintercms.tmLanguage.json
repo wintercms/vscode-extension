@@ -955,7 +955,7 @@
       "name": "keyword.control.twig"
     },
     "twig-functions-warg": {
-      "begin": "(?<=[\\s\\(\\[\\{:,])(app|asset|attribute|block|component|constant|content|country_timezones|cycle|date|divisible by|dump|html_classes|imageWidth|imageHeight|include|max|media|min|page|parent|partial|placeholder|random|range|resize|same as|source|template_from_string)(\\()",
+      "begin": "(?<=[\\s\\(\\[\\{:,])(app|asset|attribute|block|component|constant|content|country_(?:names|timezones)|cycle|currency_names|date|divisible by|dump|html_classes|imageWidth|imageHeight|include|max|media|min|page|parent|partial|placeholder|random|range|resize|same as|script_names|source|template_from_string|url|url_current)(\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.twig"
