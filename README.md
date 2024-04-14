@@ -45,3 +45,7 @@ To enable [Emmet features](https://docs.emmet.io/) in theme templates, add the f
     "wintercms": "html"
 }
 ```
+
+## Compatibility with other extensions
+
+If you are getting the error `Symfony\Component\ErrorHandler\Error\FatalError: Uncaught Illuminate\Contracts\Container\BindingResolutionException: Target [Illuminate\Contracts\Auth\Access\Gate] is not instantiable.` in your logs or Ray output while you have the Laravel Extra Intellisense extension installed, then you can set `LaravelExtraIntellisense.disableAuth` to `true` in your VSCode extension settings.
