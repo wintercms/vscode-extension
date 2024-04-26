@@ -1087,7 +1087,7 @@
       "contentName": "meta.function.arguments.twig"
     },
     "twig-filters-warg": {
-      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|finish|format|join|merge|number_format|replace|resize|round|slice|slug|split|trans|transchoice|trim)(\\()",
+      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(batch|column|convert_encoding|country_name|currency_(?:name|symbol)|data_uri|date|date_modify|default|e(?:scape)?|filter|finish|format|format_(?:currency|date|datetime|number|time)|inline_css|join|json_encode|language_name|locale_name|map|merge|number_format|reduce|replace|resize|round|slice|slug|split|timezone_name|trans|transchoice|trim)(\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.twig"
@@ -1151,7 +1151,7 @@
           "name": "support.function.twig"
         }
       },
-      "match": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(abs|app|asset|camel|capitalize|e(?:scape)?|first|imageWidth|imageHeight|join|(?:json|url)_encode|keys|last|length|lower|md|md_(?:line|safe)|media|nl2br|number_format|page|plural|raw|reverse|round|singular|slug|snake|sort|striptags|studly|theme|time_(?:since|tense)|title|trans|trim|upper)(?=[\\s\\|\\]\\}\\):,]|\\.\\.|\\*\\*)"
+      "match": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(abs|app|asset|camel|capitalize|country_name|currency_(?:name|symbol)|data_uri|e(?:scape)?|first|format_number|html_to_markdown|imageHeight|imageWidth|inky_to_html|inline_css|join|(?:json|url)_encode|keys|language_name|last|length|locale_name|lower|markdown_to_html|md|md_(?:line|safe)|media|nl2br|number_format|page|plural|raw|reverse|round|singular|slug|snake|sort|spaceless|striptags|studly|theme|time_(?:since|tense)|title|trans|trim|upper)|timezone_name(?=[\\s\\|\\]\\}\\):,]|\\.\\.|\\*\\*)"
     },
     "twig-filters-warg-ud": {
       "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\()",
