@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.4.3 - 26th April, 2024
+
+- Added futher definitions for Twig filters. (thanks @WebVPF)
+
+## v0.4.2 - 13th April, 2024
+
+- Added further definitions for Twig filters, tags and functions. (thanks @WebVPF)
+
 ## v0.4.1 - 19th July, 2023
 
 - Two hot-fixes: remove strict value checking on field types, and fix `lazy` property schema.
