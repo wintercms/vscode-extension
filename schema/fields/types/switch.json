@@ -8,15 +8,17 @@
             "const": "switch"
         },
         "properties": {
-            "on": {
-                "title": "'On' label'",
-                "description": "Defines the label for when the switch is on.",
-                "type": "string"
-            },
-            "off": {
-                "title": "'Off' label'",
-                "description": "Defines the label for when the switch is off.",
-                "type": "string"
+            "properties": {
+                "on": {
+                    "title": "'On' label",
+                    "description": "Defines the label for when the switch is on.",
+                    "type": "string"
+                },
+                "off": {
+                    "title": "'Off' label",
+                    "description": "Defines the label for when the switch is off.",
+                    "type": "string"
+                }
             }
         }
     }
