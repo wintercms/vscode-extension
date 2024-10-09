@@ -517,7 +517,7 @@
       "name": "comment.block.twig"
     },
     "twig-variable-tag": {
-        "begin": "(\\{)\\/?(variable|colorpicker|dropdown|fileupload|markdown|mediafinder|radio|richeditor|repeater|text|textarea)",
+        "begin": "(\\{)\\/?(variable|colorpicker|dropdown|fileupload|markdown|mediafinder|radio|richeditor|repeater|text(area)?)",
         "beginCaptures": {
             "1": {
                 "name": "punctuation.separator.tag.twig"
